@@ -1,0 +1,63 @@
+.custom-accordion.style-1 .accordion-item{
+    @apply mb-1.25 text-secondary rounded-2lg relative w-full;
+}
+ .custom-accordion.style-1 .accordion-item .accordion-header {
+    @apply p-5 pl-7.5 bg-white rounded-2lg w-full flex justify-between items-center text-start cursor-pointer duration-300;
+}
+@media (max-width: 360px) {
+ .custom-accordion.style-1 .accordion-item .accordion-header {
+    @apply p-3;
+}
+}
+.custom-accordion.style-1 .accordion-item .accordion-header .arrow {
+    @apply text-secondary duration-300;
+}
+.accordion-content {
+    @apply max-h-0 overflow-hidden duration-500; 
+}
+.custom-accordion.style-1 .accordion-item .accordion-header.open{
+	@apply bg-primary;
+}
+.custom-accordion.style-1 .accordion-item .accordion-header.open .arrow.active span{
+    @apply -rotate-180 bg-white;
+}
+.custom-accordion.style-1 .accordion-item .accordion-content .content-inner{
+    @apply sm:px-8.75 px-3.75 sm:py-5.5 py-1.5 xl:text-xl text-base text-lightgreen dark:text-white duration-500;
+}
+
+.custom-accordion.style-2 .accordion-item .accordion-header {
+    @apply py-5 dark:text-white text-secondary border-b dark:border-white/10 border-black/10 w-full flex justify-between items-center text-start duration-300 cursor-pointer;
+}
+.custom-accordion.style-2 .accordion-item .accordion-content .content-inner{
+    @apply py-6.5 text-bodytext xl:text-2xl text-base border-b border-black/10 font-light;
+}
+.custom-accordion.style-2 .accordion-item .accordion-header .arrow{
+    @apply size-7.5;
+}
+.custom-accordion.style-2 .accordion-item .accordion-header .arrow .fa-plus {
+    @apply block dark:text-white/60 text-black/60 sm:text-2xl text-xl;
+}
+.custom-accordion.style-2 .accordion-item .accordion-header .arrow .fa-minus {
+    @apply hidden text-2xl;
+}
+.custom-accordion.style-2 .accordion-item .accordion-header.open .arrow.active .fa-minus {
+    @apply block;
+}
+.custom-accordion.style-2 .accordion-item .accordion-header.open .arrow.active .fa-plus {
+    @apply hidden;
+}
+.accordion-content {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease;
+}
+
+.arrow.rotate {
+	transform: rotate(90deg);
+	transition: transform 0.3s ease;
+}
+.gl-star-rating--stars span {
+	--gl-star-size: 20px;
+}
+
+

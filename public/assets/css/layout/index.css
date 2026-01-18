@@ -1,0 +1,56 @@
+.text-char {
+    @apply block absolute top-0 left-1/2 h-[calc(155px_/_2)] w-0 font-medium text-sm origin-[bottom_center] rotate-[var(--char-rotate)] text-lightgreen pt-2 uppercase;
+}
+.main-banner .text-char{
+	@apply !text-white;
+}
+.skrollable .counter {
+	@apply absolute top-1/2 left-1/2 -translate-1/2 text-secondary text-6xl font-extrabold uppercase;
+}
+.item-title a {
+	display:inline;
+    width: fit-content;
+    color: var(--secondary);
+    background-position-y: -3px;
+    background-image: linear-gradient(transparent calc(100% - 1px), var(--secondary) 1px);
+    background-repeat: no-repeat;
+    animation: .6s cubic-bezier(.215, .61, .355, 1) pxl-wide-menu-underline forwards;
+}
+
+@keyframes pxl-wide-menu-underline {
+    0% {
+        background-size: 100% 100%;
+        background-position-x: 100%
+    }
+
+    100% {
+        background-size: 0 100%;
+        background-position-x: 100%
+    }
+}
+
+@keyframes pxl-wide-menu-underline-hover {
+    0% {
+        background-position-x: 0;
+        background-size: 0 100%
+    }
+
+    100% {
+        background-position-x: 0;
+        background-size: 100% 100%
+    }
+}
+.item-title a:hover {
+    color: inherit;
+    animation: .6s cubic-bezier(.215, .61, .355, 1) pxl-wide-menu-underline-hover forwards;
+}
+ .my-list-item {
+	counter-increment: my-counter;
+}
+
+.my-list-item::before {
+	content: counter(my-counter) ". ";
+}
+.site-filters .filters .active{
+	@apply bg-primary;
+}

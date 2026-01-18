@@ -1,0 +1,20 @@
+.clip-right-animation {
+    animation-name: clipRightIn;
+    animation-timing-function: cubic-bezier(0,0.57,0.55,1);
+}
+.clip-left-animation {
+    animation-name: clipLeftIn;
+    animation-timing-function: cubic-bezier(0,0.57,0.55,1);
+}
+#grow-chart g.apexcharts-series path:hover {
+    fill: var(--primary);
+}
+.dz-hover-img canvas {
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    border-radius: 10px;
+	object-fit: contain;
+}

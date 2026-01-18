@@ -1,0 +1,32 @@
+.status-modal {
+	@apply bg-[#000000c4] backdrop-blur-[10px] z-99999 overflow-hidden;
+}
+
+.status-modal .modal-content .status-wrapper .status-swiper .swiper-slide .status-top-box {
+	@apply absolute top-0 left-0 z-10 size-full flex justify-between  pt-7.5 px-5 text-white;
+}
+.status-modal .status-pagination {
+	@apply absolute top-0 !bottom-auto !left-1/2 h-auto !w-full flex justify-between z-10 -translate-1/2 py-2.5;
+}
+
+.status-modal .status-pagination .swiper-pagination-bullet {
+	@apply h-1.25 bg-white/20  rounded-2lg relative overflow-hidden w-full;
+}
+.swiper-pagination-bullet-active:after{
+	@apply w-full duration-500;
+}
+.status-modal .status-pagination .swiper-pagination-bullet:after {
+	@apply content-[''] size-full bg-white absolute top-0 left-0 duration-300;
+}
+.modal-content{
+	@apply relative flex flex-col w-full pointer-events-auto bg-white rounded-4xl;
+}
+.status-modal .modal-content .status-wrapper .status-swiper .swiper-slide .status-top-box:after {
+	@apply content-[''] absolute top-0 left-0 size-full bg-[linear-gradient(0deg,rgba(255,255,255,0)_0.3%,rgba(0,0,0,0.6)_100%)] opacity-60 -z-1 rounded-4xl;
+}
+.status-modal .btn-close {
+		@apply absolute top-0 right-0 size-[44px] text-white z-10 p-[.25em] rounded-[.25em] bg-[image:var(--bg-close-icon)] opacity-[.5] bg-no-repeat bg-center ;
+}
+.alignwide .btn-Video{
+	@apply absolute top-1/2 left-1/2 border-0 rounded-full sm:size-25 size-20 bg-[#000000cc] z-10 -translate-1/2 text-white m-0 cursor-pointer;
+}

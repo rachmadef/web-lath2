@@ -1,0 +1,130 @@
+
+/* General styling for the custom select */
+.custom-select {
+  position: relative;
+}
+.align-right + div .select-items{
+  right: 0;
+}
+/* Styling the visible selected div */
+.select-selected {		
+ /*  padding: 8px 35px 8px 15px !important; */
+  cursor: pointer;
+  position: relative;
+  font-size: 14px !important;
+  display: flex;
+  align-items: center; 
+  user-select: none;
+}
+
+.list-selected .custom-select .select-selected {
+    @apply w-full cursor-pointer py-3.5 !pr-7.5 dark:!text-white !text-secondary duration-300 text-base font-medium h-12.5;
+}
+.list-selected .select-selected:after {
+    margin-top: -12px !important;
+}
+.select-selected span{
+  display: none;
+}
+.dark .select-selected:after {
+  border-right: 0;
+  border-top: 0;
+}
+.light .select-selected:after {
+  border-right:0;
+  border-top: 0;
+}
+
+
+/* Arrow inside the select-selected div */
+.select-selected:after {
+  content: "";
+  position: absolute;
+  right: 15px;
+  width: 8px;
+  height: 8px;
+  transform: rotate(135deg);
+  margin-top: -4px;
+  transition: .3s all;
+}
+
+/* Style the select when it's active (dropdown is open) */
+.select-selected.select-active:after {
+  transform: rotate(-45deg);
+  margin-top: 4px;
+}
+
+.dark .select-items {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+.light .select-items {
+  background-color: white;
+}
+.custom-select.right .select-items{
+   right: auto;
+    left: 0;
+}
+.select-items {
+  position: absolute;
+  width: 100%;
+  z-index: 99;
+  max-height: 320px;
+  overflow-y: auto;
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+  width: 200px;
+  scrollbar-width: thin;
+  transition: .3s all;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  right: 0;
+  border-radius:10px;
+}
+
+@media screen and (max-width: 992px) {
+.select-items{
+	right: -64px;
+}
+}
+
+/* Individual dropdown items */
+.select-item {
+  padding: 5px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  user-select: none;
+}
+.select-item.active {
+  background-color: var(--primary);
+  color: var(--color-dark);
+}
+
+.select-item:hover {
+  background-color: #eee; /* Hover effect */
+  color: var(--color-dark);
+}
+
+/* Show the dropdown items when select-selected is clicked */
+.select-items.select-hide {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+}
+
+.custom-select .select-selected {
+    @apply w-full cursor-pointer py-3.5 !px-0 text-secondary/50 duration-300 text-base font-medium h-12.5;
+}
+.custom-select .select-selected:after {
+    content: "\f107";
+    font-family: "fontawesome";
+    position: absolute;
+    right: 8px;
+    width: 8px;
+    height: 8px;
+    transition: .3s all;
+	transform: rotate(0);
+	margin-top: -10px;
+}
+
