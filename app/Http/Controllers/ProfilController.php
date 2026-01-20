@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Post;
@@ -8,7 +7,8 @@ class ProfilController extends Controller
 {
     public function show(int $id)
     {
-        $post = Post::where('id', $id)
+        $post = Post::with(['author', 'category'])
+            ->where('id', $id)
             ->where('status', 'published')
             ->firstOrFail();
 

@@ -23,6 +23,15 @@ class NewsController extends Controller
             ->where('status', 'published')
             ->firstOrFail();
 
-        return view('news.show', compact('post'));
+        // Get related posts for sidebar
+        $relatedPosts = Post::with(['author', 'category'])
+            ->where('category_id', $post->category_id)
+            ->where('id', '!=', $post->id)
+            ->where('status', 'published')
+            ->latest('published_at')
+            ->take(4)
+            ->get();
+
+        return view('news.show', compact('post', 'relatedPosts'));
     }
 }
