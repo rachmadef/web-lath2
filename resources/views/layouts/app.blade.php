@@ -30,10 +30,11 @@
 
 <!-- MOBILE SPECIFIC -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
 <!-- FAVICONS ICON -->
 <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/favicon.png') }}">
-    <link rel="stylesheet" href="{{ asset('assets/icons/font-awesome/css/all.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/icons/font-awesome/css/all.min.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/icons/line-awesome/css/line-awesome.min.css') }}">
 <link rel="stylesheet" type="text/css"  href="{{ asset('assets/icons/flaticon/flaticon.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/vendor/lightgallery/dist/css/lightgallery-bundle.min.css') }}">
@@ -78,6 +79,17 @@
                 stroke-linecap="round" stroke-dasharray="100.53" stroke-dashoffset="100.53"></circle>
         </svg>
     </button>
+    <!-- Toast Copy -->
+    <div id="toast-copy"
+        class="fixed bottom-6 left-1/2 -translate-x-1/2 
+                bg-gray-900 text-white text-sm 
+                px-4 py-2 rounded-full shadow-lg
+                opacity-0 pointer-events-none
+                transition-opacity duration-300 z-50
+                flex items-center gap-2">
+        <i class="fa-solid fa-check text-green-400"></i>
+        <span>Link berhasil disalin</span>
+    </div>
 
     <!-- Vendor Scripts -->
     <script src="{{ asset('assets/vendor/gsap/gsap.min.js') }}"></script>

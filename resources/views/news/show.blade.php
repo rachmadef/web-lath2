@@ -7,13 +7,13 @@
     <div id="smooth-content">
         <div class="page-content py-10">
             <!-- Hero Section -->
-            <section class="relative pb-10">
+            <section class="relative pt-10">
                 <div class="container relative mx-auto px-4">
                     <div class="max-w-4xl mx-auto text-center">
                         <!-- Category Badge -->
                         <div class="inline-flex items-center mb-6">
                             <a href="{{ route('news.category', $post->category->slug) }}" 
-                               class="inline-flex items-center bg-primary/10 hover:bg-primary/20 dark:bg-primary/20 dark:hover:bg-primary/30 text-primary dark:text-primary-light px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 group">
+                               class="inline-flex items-center bg-secondary hover:bg-primary dark:bg-primary dark:hover:bg-secondary text-primary hover:text-secondary dark:text-primary dark:hover:text-white px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 group">
                                 <span class="mr-2">{{ $post->category->name }}</span>
                                 <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -22,16 +22,16 @@
                         </div>
 
                         <!-- Title -->
-                        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 dark:text-white text-gray-900 leading-tight">
+                        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-secondary dark:text-white text-gray-900 leading-tight">
                             {{ $post->title }}
                         </h1>
                         <!-- Meta Information -->
                         <div class="flex flex-wrap items-center justify-center gap-6 text-gray-600 dark:text-gray-300">
                             <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2 text-primary dark:text-primary-light">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2 text-primary dark:text-primary">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                                 </svg>
-                                <p class="font-medium text-gray-900 dark:text-white">{{ $post->author->name }}</p>
+                                <span class="font-medium">{{ $post->author->name }}</span>
                             </div>
                             
                             <div class="hidden md:block w-px h-6 bg-gray-300 dark:bg-gray-600"></div>
@@ -59,7 +59,7 @@
             </section>
 
             <!-- Main Content Section -->
-            <section class="py-16 lg:py-24 bg-white dark:bg-emerald-800">
+            <section class="py-16 lg:py-24">
                 <div class="container mx-auto px-4">
                     <div class="max-w-4xl mx-auto">
                         <!-- Featured Image -->
@@ -87,9 +87,9 @@
                         </article>
 
                         <!-- Tags Section -->
-                        <div class="mb-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+                        <div class="mb-12 pt-8 border-t border-emerald-900 dark:border-emerald-800">
                             <div class="flex flex-wrap items-center gap-3">
-                                <span class="text-lg font-semibold text-gray-900 dark:text-white flex items-center">
+                                <span class="text-lg font-semibold text-gray-900 dark:text-primary flex items-center">
                                     <svg class="w-5 h-5 mr-2 text-primary dark:text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
                                     </svg>
@@ -102,70 +102,79 @@
                                         </a>
                                     @endforeach
                                 @endif
-                                <a href="{{ route('news.category', $post->category->slug) }}" class="inline-flex items-center bg-primary/10 hover:bg-primary/20 dark:bg-primary/20 dark:hover:bg-primary/30 text-primary dark:text-primary-light px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300">
+                                <a href="{{ route('news.category', $post->category->slug) }}" class="inline-flex items-center bg-primary hover:bg-secondary dark:bg-primary dark:hover:bg-white text-secondary hover:text-primary dark:text-secondary dark:hover:text-white px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300">
                                     #{{ $post->category->name }}
                                 </a>
                             </div>
                         </div>
 
                         <!-- Share Section -->
-                        <div class="bg-gradient-to-r from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 mb-12 border border-gray-200 dark:border-gray-700">
+                        <div class="bg-emerald-950 rounded-2xl p-6 md:p-8 mb-12 border border-emerald-800">
                             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                                <div class="flex items-center">
-                                    <div class="w-12 h-12 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center mr-4">
+
+                                <!-- Left Info -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center">
                                         <svg class="w-6 h-6 text-primary dark:text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
                                         </svg>
                                     </div>
+
                                     <div>
-                                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Bagikan Artikel</h3>
-                                        <p class="text-gray-600 dark:text-gray-300">Bantu sebarkan informasi ini</p>
+                                        <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white">
+                                            Bagikan Artikel
+                                        </h3>
+                                        <p class="text-sm text-gray-600 dark:text-gray-300">
+                                            Bantu sebarkan informasi ini
+                                        </p>
                                     </div>
                                 </div>
-                                
+
+                                <!-- Share Buttons -->
+                                @php
+                                    $shareUrl   = url()->current();
+                                    $shareTitle = urlencode($post->title);
+                                    $shareText  = urlencode("Baca artikel menarik: {$post->title}");
+                                @endphp
+
                                 <div class="flex items-center gap-3">
-                                    @php
-                                        $shareUrl = url()->current();
-                                        $shareTitle = urlencode($post->title);
-                                        $shareText = urlencode("Baca artikel menarik: {$post->title}");
-                                    @endphp
                                     
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ $shareUrl }}&quote={{ $shareTitle }}" 
-                                       target="_blank"
-                                       class="w-12 h-12 rounded-full bg-white dark:bg-gray-700 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-[#1877F2] hover:text-white dark:hover:bg-[#1877F2] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                                        </svg>
+                                    <!-- WhatsApp -->
+                                    <a href="https://wa.me/?text={{ $shareText }}%20{{ $shareUrl }}"
+                                    target="_blank" 
+                                    class="w-12 h-12 rounded-full flex items-center justify-center text-secondary hover:text-white bg-white hover:bg-primary transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                                        <i class="fa-brands fa-whatsapp text-xl"></i>
                                     </a>
-                                    
-                                    <a href="https://twitter.com/intent/tweet?url={{ $shareUrl }}&text={{ $shareText }}" 
-                                       target="_blank"
-                                       class="w-12 h-12 rounded-full bg-white dark:bg-gray-700 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-[#1DA1F2] hover:text-white dark:hover:bg-[#1DA1F2] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.213c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                                        </svg>
+
+                                    <!-- Telegram -->
+                                    <a href="https://t.me/share/url?url={{ $shareUrl }}&text={{ $shareText }}"
+                                    target="_blank"
+                                    class="w-12 h-12 rounded-full flex items-center justify-center text-secondary hover:text-white bg-white hover:bg-primary transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                                        <i class="fa-brands fa-telegram text-xl"></i>
                                     </a>
-                                    
-                                    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ $shareUrl }}&title={{ $shareTitle }}" 
-                                       target="_blank"
-                                       class="w-12 h-12 rounded-full bg-white dark:bg-gray-700 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-[#0A66C2] hover:text-white dark:hover:bg-[#0A66C2] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                                        </svg>
+                                    <!-- Twitter/X -->
+                                    <a href="https://twitter.com/intent/tweet?text={{ $shareText }}&url={{ $shareUrl }}"
+                                    target="_blank"
+                                    class="w-12 h-12 rounded-full flex items-center justify-center text-secondary hover:text-white bg-white hover:bg-primary transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                                        <i class="fa-brands fa-twitter text-xl"></i>
                                     </a>
-                                    
-                                    <button onclick="copyToClipboard('{{ $shareUrl }}')"
-                                            class="w-12 h-12 rounded-full bg-white dark:bg-gray-700 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-gray-800 hover:text-white dark:hover:bg-gray-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 group">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-                                        </svg>
-                                        <span class="absolute -top-8 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
-                                            Salin Link
-                                        </span>
+                                    <!-- Copy -->
+                                    <button onclick="copyLink()"
+                                            class="w-12 h-12 rounded-full flex items-center justify-center text-white bg-primary hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer">
+                                        <i class="fa-solid fa-copy text-xl"></i>
                                     </button>
+
+                                    <!-- Native Share -->
+                                    <button onclick="nativeShare()"
+                                            class="w-12 h-12 rounded-full flex items-center justify-center text-white bg-primary hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer">
+                                        <i class="fa-solid fa-share text-xl"></i>
+                                    </button>
+
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </section>
@@ -174,12 +183,33 @@
 </div>
 
 <script>
-function copyToClipboard(text) {
-    navigator.clipboard.writeText(text).then(function() {
-        alert('Link berhasil disalin!');
-    }, function(err) {
-        alert('Gagal menyalin link: ', err);
-    });
+function showToast() {
+    const toast = document.getElementById('toast-copy');
+    if (!toast) return;
+
+    toast.style.opacity = "1";
+
+    setTimeout(() => {
+        toast.style.opacity = "0";
+    }, 1500);
+}
+
+function copyLink() {
+    navigator.clipboard.writeText(window.location.href)
+        .then(() => showToast())
+        .catch(() => alert("Gagal menyalin link"));
+}
+
+function nativeShare() {
+    if (navigator.share) {
+        navigator.share({
+            title: "{{ $post->title }}",
+            text: "Baca artikel ini:",
+            url: window.location.href
+        });
+    } else {
+        alert("Perangkat tidak mendukung fitur Share.");
+    }
 }
 
 // Intersection Observer for scroll animations

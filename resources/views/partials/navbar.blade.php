@@ -53,7 +53,7 @@
                             </div>
                         </div>
                     </div>
-                    <ul class="nav navbar xl:flex xl:w-auto w-full">
+                    <ul class="nav navbar xl:flex xl:w-auto w-full list-none">
                         <li class="">
                             <a href="{{ route('home') }}" class="text-sm sm:text-base lg:text-lg"><span>Beranda</span></a>
                         </li>

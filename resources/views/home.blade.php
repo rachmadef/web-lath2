@@ -440,11 +440,11 @@
                     <div class="container px-4 sm:px-6 lg:px-8">
                         <div class="flex flex-col sm:flex-row gap-6 justify-between items-start sm:items-end mb-10">
                             <div class="max-w-3xl">
-                                <h2 class="font-semibold text-white
+                                <h2 class="font-semibold text-secondary dark:text-white
 											2xl:text-[55px] lg:text-5xl sm:text-4xl text-2xl leading-tight mb-3">
                                     Berita dan Artikel
                                 </h2>
-                                <p class="text-gray-300 text-sm sm:text-base max-w-2xl">
+                                <p class="text-gray-600 dark:text-primary text-lg sm:text-base max-w-2xl">
                                     Temukan berita terbaru dan artikel menarik seputar perkembangan terkini
                                 </p>
                             </div>

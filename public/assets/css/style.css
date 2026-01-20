@@ -241,9 +241,6 @@
   summary {
     display: list-item;
   }
-  ol, ul, menu {
-    list-style: none;
-  }
   img, svg, video, canvas, audio, iframe, embed, object {
     display: block;
     vertical-align: middle;
@@ -1817,9 +1814,6 @@
   }
   .resize {
     resize: both;
-  }
-  .\!list-decimal {
-    list-style-type: decimal !important;
   }
   .grid-cols-12 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
