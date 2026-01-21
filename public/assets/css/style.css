@@ -10636,6 +10636,8 @@ body.menu-btn-open {
 }
 .site-filters .filters .active {
   background-color: var(--color-primary);
+  color: var(--color-secondary);
+  font-weight: bold;
 }
 .product-gallery-swiper .swiper-slide.swiper-slide-thumb-active img {
   border-color: var(--color-black);

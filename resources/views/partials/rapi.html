@@ -1,235 +1,175 @@
 @extends('layouts.app')
 
-@section('title', 'Daftar')
+@section('title', 'Profil Pondok')
 
 @section('content')
-<div id="smooth-wrapper" class="py-12 pb-24">
+
+<div id="smooth-wrapper">
     <div id="smooth-content">
-        <div class="page-content">
 
-            {{-- ================= HEADER SECTION ================= --}}
-            <section>
-                <div class="2xl:pt-0 2xl:pb-36 sm:pt-32 sm:pb-20 pt-10 pb-12"> {{-- Responsivitas diperbaiki: Padding
-                    atas lebih kecil di mobile --}}
-                    <div class="container-fluid 3xl:mx-20 xl:mx-16 lg:mx-12 md:mx-8 mx-5 pb-12"> {{-- Responsivitas
-                        diperbaiki: Margin horizontal responsif tanpa !important yang tidak perlu --}}
+        <section id="Work" class="relative lg:pt-42.25 pt-28 lg:pb-35.5 pb-16 z-0 portfolio">
 
-                        {{-- Header Title --}}
-                        <div class="text-center mb-16">
-                            <h2
-                                class="2xl:text-7xl xl:text-5xl lg:text-4xl md:text-4xl sm:text-4xl text-3xl font-semibold text-secondary dark:text-primary mb-4">
-                                {{-- Sudah responsif, tapi pastikan konsisten --}}
-                                Daftar Sekarang
+            <div class="container">
+
+                <div class="grid grid-cols-12">
+                    <div class="col-span-12">
+
+                        {{-- ================= HEADING ================= --}}
+                        <div class="text-center mb-10 lg:mb-14">
+                            <h2 class="2xl:text-[90px]/[1] xl:text-5xl lg:text-4xl sm:text-4xl text-3xl
+font-display font-medium text-secondary dark:text-white tracking-tight">
+                                Galeri
                             </h2>
-                            <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"> {{--
-                                Responsivitas diperbaiki: Ukuran teks lebih besar di md+ --}}
-                                Klik tombol di bawah untuk mendaftar atau pelajari informasi lengkap melalui panduan
-                                kami
+                            <p class="mt-4 text-base sm:text-lg text-secondary/70 dark:text-white/70 max-w-xl mx-auto">
+                                Dokumentasi kegiatan dan momen berharga di Pondok
                             </p>
+
+                            {{-- decorative divider --}}
+                            <div class="mt-6 flex justify-center">
+                                <span class="h-[2px] w-20 bg-primary/70 rounded-full"></span>
+                            </div>
                         </div>
 
-                        {{-- ================= REGISTRATION BUTTONS ================= --}}
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-20"> {{-- Sudah responsif
-                            --}}
-                            @foreach([
-                            ['https://s.id/psbwhb1','Daftar Putra'],
-                            ['https://s.id/psblath2','Daftar Putri']
-                            ] as [$link,$label])
-                            <a href="{{ $link }}" target="_blank"
-                                class="group relative flex items-center justify-between rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-6 sm:px-8 py-4 sm:py-6 shadow-sm dark:shadow-black/40 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-primary">
-                                {{-- Responsivitas diperbaiki: Padding lebih kecil di mobile --}}
-                                <span
-                                    class="text-lg sm:text-xl font-semibold tracking-tight text-secondary dark:text-gray-100 group-hover:text-primary transition-colors">
-                                    {{-- Responsivitas diperbaiki: Ukuran teks responsif --}}
-                                    {{ $label }}
-                                </span>
-                                <span
-                                    class="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 dark:bg-primary/20 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:scale-110">
-                                    {{-- Responsivitas diperbaiki: Ukuran ikon lebih kecil di mobile --}}
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </span>
-                            </a>
+                        {{-- ================= FILTER ================= --}}
+                        <div class="flex items-center justify-center site-filters md:py-10 py-6">
+                            <ul class="filters flex flex-wrap items-center justify-center gap-2 sm:gap-4">
+
+                                <li data-filter="*" class="filter-item active cursor-pointer">
+                                    <span class="filter-pill">
+                                        View All
+                                    </span>
+                                </li>
+
+                                @foreach($categories as $category)
+                                <li data-filter=".{{ $category->slug }}" class="filter-item cursor-pointer">
+                                    <span class="filter-pill">
+                                        {{ $category->name }}
+                                    </span>
+                                </li>
+                                @endforeach
+
+                            </ul>
+
+                        </div>
+
+                        {{-- ================= GALLERY GRID ================= --}}
+                        <div class="flex masonry2 gap-y-8" data-masonry='{"percentPosition": true}'>
+
+                            <div class="grid-sizer md:w-1/2 w-full"></div>
+
+                            @foreach($galleries as $item)
+                            @php $cover = $item->images[0] ?? null; @endphp
+
+                            <div class="grid-item md:w-1/2 w-full {{ $item->category->slug }} px-2.5">
+
+                                <div class="dlab-box dlab-gallery-box">
+
+                                    <div class="workbox dz-hover-item group relative overflow-hidden rounded-3xl
+bg-black/5 dark:bg-white/5">
+
+                                        <a href="{{ route('gallery.show', $item) }}" class="block relative">
+
+                                            @if($cover)
+                                            <img src="{{ asset('storage/'.$cover) }}" alt="{{ $item->title }}" class="w-full h-[240px] sm:h-[300px] lg:h-[360px] object-cover
+transition-transform duration-700 ease-out
+group-hover:scale-110" />
+                                            @endif
+
+                                            {{-- gradient overlay --}}
+                                            <div class="absolute inset-0 bg-gradient-to-t
+from-black/90 via-black/50 to-transparent
+opacity-50 group-hover:opacity-90
+transition-opacity duration-500">
+                                            </div>
+
+                                            {{-- glow border --}}
+                                            <div class="absolute inset-0 rounded-3xl ring-0 ring-primary/0
+group-hover:ring-2 group-hover:ring-primary/40
+transition-all duration-500">
+                                            </div>
+
+                                            {{-- title --}}
+                                            <div class="absolute inset-x-0 bottom-0 p-6
+translate-y-6 opacity-0
+group-hover:translate-y-0 group-hover:opacity-100
+transition-all duration-500">
+
+                                                <h3
+                                                    class="text-white text-lg sm:text-xl xl:text-2xl font-medium leading-snug">
+                                                    {{ $item->title }}
+                                                </h3>
+
+                                            </div>
+
+                                            {{-- hover icon --}}
+                                            <div class="absolute inset-0 flex items-center justify-center
+opacity-0 scale-75
+group-hover:opacity-100 group-hover:scale-100
+transition-all duration-500">
+                                                <span class="size-14 rounded-full bg-primary/90
+flex items-center justify-center shadow-xl">
+                                                    <i class="fa-solid fa-eye text-white text-lg"></i>
+                                                </span>
+                                            </div>
+
+                                        </a>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
                             @endforeach
-                        </div>
 
-                        {{-- ================= GUIDE SECTION ================= --}}
-                        <div class="text-center mb-12">
-                            <h3 class="text-2xl sm:text-3xl font-semibold text-secondary dark:text-primary mb-2"> {{--
-                                Responsivitas diperbaiki: Ukuran heading responsif --}}
-                                Panduan Pendaftaran
-                            </h3>
-                            <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300"> {{-- Responsivitas
-                                diperbaiki: Ukuran teks responsif --}}
-                                Klik poin berikut untuk melihat detail informasi
-                            </p>
-                        </div>
-
-                        {{-- Guide Buttons Grid --}}
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
-                            {{-- Responsivitas diperbaiki: Gap lebih kecil di mobile --}}
-                            @php
-                            $buttons = [
-                            ['modal1','Persyaratan','fa-list-check'],
-                            ['modal2','Prosedur','fa-route'],
-                            ['modal3','Biaya','fa-money-bill-wave'],
-                            ['modal4','Jadwal','fa-calendar-days'],
-                            ['modal5','Alur','fa-diagram-project'],
-                            ['modal6','Kontak','fa-location-dot'],
-                            ];
-                            @endphp
-
-                            @foreach($buttons as [$id,$label,$icon])
-                            <button onclick="openModal('{{ $id }}')"
-                                class="modal-btn group relative flex items-center justify-center gap-3 sm:gap-4 rounded-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-secondary dark:text-gray-100 shadow-sm dark:shadow-black/30 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:border-primary cursor-pointer">
-                                {{-- Responsivitas diperbaiki: Padding dan gap lebih kecil di mobile --}}
-                                <span
-                                    class="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 dark:bg-primary/20 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:scale-110">
-                                    {{-- Responsivitas diperbaiki: Ukuran ikon responsif --}}
-                                    <i class="fa-solid {{ $icon }}"></i>
-                                </span>
-                                <span
-                                    class="text-base sm:text-lg font-semibold tracking-tight group-hover:text-primary transition-colors">
-                                    {{-- Responsivitas diperbaiki: Ukuran teks responsif --}}
-                                    {{ $label }}
-                                </span>
-                            </button>
-                            @endforeach
                         </div>
 
                     </div>
                 </div>
-            </section>
 
-            {{-- ================= MODAL BACKDROP ================= --}}
-            <div id="modalBackdrop"
-                class="fixed inset-0 z-50 hidden bg-black/60 dark:bg-black/80 backdrop-blur-sm transition-opacity">
             </div>
 
-            {{-- ================= MODALS ================= --}}
-            @foreach($contents as $key => $item)
-            <div id="modal{{ $loop->iteration }}"
-                class="modal fixed inset-0 z-50 hidden flex items-center justify-center px-4 sm:px-6"> {{-- Sudah
-                responsif --}}
-                {{-- Modal Header --}}
-                <div class="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 bg-primary rounded-t-2xl"> {{--
-                    Responsivitas diperbaiki: Padding responsif --}}
-                    <h3 class="text-lg sm:text-xl lg:text-2xl font-semibold text-white"> {{-- Responsivitas diperbaiki:
-                        Ukuran heading responsif --}}
-                        {{ $item->title }}
-                    </h3>
-                    <button onclick="closeModal('modal{{ $loop->iteration }}')"
-                        class="flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full text-white hover:text-gray-200 hover:bg-white/20 transition">
-                        {{-- Responsivitas diperbaiki: Ukuran tombol responsif --}}
-                        &times;
-                    </button>
-                </div>
+        </section>
 
-                {{-- Modal Content --}}
-                <div class="overflow-y-auto flex-1 px-4 sm:px-6 py-3 sm:py-4 bg-white text-gray-900"> {{-- Responsivitas
-                    diperbaiki: Padding responsif --}}
-                    <div
-                        class="prose prose-invert max-w-none prose-ol:list-decimal prose-ul:list-disc prose-ol:pl-6 prose-ul:pl-6 prose-li:marker:text-primary prose-li:my-1 prose-p:mb-2 prose-ol:mt-2 prose-ul:mt-2 prose-headings:text-emerald-900 prose-p:text-emerald-900 prose-li:text-gray-800 dark:prose-invert">
-                        {!! $item->content !!}
-                    </div>
-                </div>
+        {{-- ================= SCROLL TO TOP ================= --}}
+        <button id="scrollProgress" class="fixed right-5 bottom-5 z-50 size-10 rounded-full
+bg-secondary shadow-shadow-card
+opacity-0 pointer-events-none
+transition-all duration-500
+flex items-center justify-center hover:scale-105">
+            <span class="text-xs">
+                <i class="fa-solid fa-chevron-up text-primary"></i>
+            </span>
+            <svg class="absolute top-0 left-0 -rotate-90" width="40" height="40">
+                <circle cx="20" cy="20" r="17" stroke="var(--primary)" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-dasharray="100.53" stroke-dashoffset="100.53">
+                </circle>
+            </svg>
+        </button>
+        <style>
+            .filter-pill {
+                @apply px-6 py-2 rounded-full text-sm sm:text-base font-display font-light text-secondary dark:text-white transition-all duration-300;
+            }
 
-                {{-- Modal Footer --}}
-                <div
-                    class="flex justify-end gap-3 px-4 sm:px-6 py-3 sm:py-4 border-t border-gray-200 bg-white rounded-b-2xl">
-                    {{-- Responsivitas diperbaiki: Padding responsif --}}
-                    <button onclick="closeModal('modal{{ $loop->iteration }}')"
-                        class="px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg bg-primary text-white hover:bg-secondary transition font-medium">
-                        {{-- Responsivitas diperbaiki: Padding tombol responsif --}}
-                        Tutup
-                    </button>
-                </div>
-            </div>
-            @endforeach
+            .filter-item.active .filter-pill {
+                @apply bg-primary text-white shadow-md shadow-primary/30;
+            }
 
-        </div>
+            .filter-item:not(.active):hover .filter-pill {
+                @apply bg-primary text-white shadow-md shadow-primary/20;
+            }
+        </style>
+
+        @push('scripts')
+        <script src="{{ asset('assets/vendor/gsap/gsap.min.js') }}"></script>
+        <script src="{{ asset('assets/vendor/gsap/ScrollTrigger.min.js') }}"></script>
+        <script src="{{ asset('assets/vendor/gsap/ScrollSmoother.js') }}"></script>
+        <script src="{{ asset('assets/vendor/masonry/masonry-4.2.2.js') }}"></script>
+        <script src="{{ asset('assets/vendor/masonry/isotope.pkgd.min.js') }}"></script>
+        <script src="{{ asset('assets/js/custom.js') }}"></script>
+        @endpush
+
     </div>
 </div>
 
-{{-- ================= SCRIPT ================= --}}
-<script>
-    function openModal(modalId) {
-        const modal = document.getElementById(modalId);
-        const backdrop = document.getElementById('modalBackdrop');
-
-        backdrop.classList.remove('hidden');
-        modal.classList.remove('hidden');
-
-        setTimeout(() => {
-            modal.querySelector('div').classList.remove('scale-95', 'opacity-0');
-            modal.querySelector('div').classList.add('scale-100', 'opacity-100');
-        }, 10);
-
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal(modalId) {
-        const modal = document.getElementById(modalId);
-        const backdrop = document.getElementById('modalBackdrop');
-
-        modal.querySelector('div').classList.add('scale-95', 'opacity-0');
-
-        setTimeout(() => {
-            modal.classList.add('hidden');
-            backdrop.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }, 300);
-    }
-
-    document.getElementById('modalBackdrop').addEventListener('click', () => {
-        const open = document.querySelector('.modal:not(.hidden)');
-        if (open) closeModal(open.id);
-    });
-
-    document.addEventListener('keydown', e => {
-        if (e.key === 'Escape') {
-            const open = document.querySelector('.modal:not(.hidden)');
-            if (open) closeModal(open.id);
-        }
-    });
-</script>
-<style>
-    /* Override untuk memastikan list muncul di modal */
-    .modal .prose ul {
-        list-style-type: disc;
-        /* Bullet default */
-        padding-left: 1.5rem;
-    }
-
-    .modal .prose ol {
-        list-style-type: decimal;
-        /* Angka default */
-        padding-left: 1.5rem;
-    }
-
-    .modal .prose li {
-        margin-bottom: 0.25rem;
-        color: #000000;
-        /* Warna teks hitam */
-    }
-
-    .modal .prose li::marker {
-        color: #000000;
-        /* Warna marker sesuai primary (hijau) */
-    }
-
-    /* Responsivitas tambahan untuk modal di mobile kecil */
-    @media (max-width: 640px) {
-        .modal div {
-            max-height: 80vh;
-            /* Kurangi tinggi modal di mobile */
-            margin: 1rem;
-            /* Tambah margin agar tidak terlalu dekat tepi */
-        }
-
-        .modal .prose {
-            font-size: 0.875rem;
-            /* Ukuran font prose lebih kecil di mobile */
-        }
-    }
-</style>
 @endsection
