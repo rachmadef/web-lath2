@@ -253,5 +253,22 @@ document.querySelectorAll('.prose img').forEach(img => observer.observe(img));
 .dark .bg-grid-gray-800 {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(31 41 55 / 0.3)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
 }
+/* Override untuk memastikan list muncul di modal */
+.prose ul {
+    list-style-type: disc; /* Bullet default */
+    padding-left: 1.5rem;
+}
+.prose ol {
+    list-style-type: decimal; /* Angka default */
+    padding-left: 1.5rem;
+}
+.prose li {
+    margin-bottom: 0.25rem;
+    color: #4a5565; /* Warna teks hitam */
+}
+.prose li::marker {
+    color: #4a5565; /* Warna marker sesuai primary (hijau) */
+}
 </style>
+
 @endsection

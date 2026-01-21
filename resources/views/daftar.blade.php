@@ -14,7 +14,7 @@
 
                         {{-- Header Title --}}
                         <div class="text-center mb-16">
-                            <h2 class="2xl:text-7xl xl:text-5xl lg:text-4xl sm:text-4xl text-3xl font-semibold text-secondary dark:text-primary mb-4">
+                            <h2 class="2xl:text-7xl xl:text-5xl lg:text-4xl sm:text-4xl text-3xl font-bold text-secondary dark:text-primary mb-4">
                                 Daftar Sekarang
                             </h2>
                             <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -30,27 +30,16 @@
                             ] as [$link,$label])
                             <a href="{{ $link }}" 
                                target="_blank"
-                               class="group relative flex items-center justify-between rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-8 py-6 sm:px-4 sm:py-3 shadow-sm dark:shadow-black/40 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-primary">
-                                <span class="text-xl font-semibold tracking-tight text-secondary dark:text-gray-100 group-hover:text-primary transition-colors">
+                               class="group relative flex items-center justify-between rounded-full bg-secondary hover:bg-primary dark:bg-primary px-4 py-2 sm:px-6 sm:py-3 shadow-sm dark:shadow-black/40 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-primary">
+                                <span class="text-xl font-semibold tracking-tight text-primary dark:text-gray-100 group-hover:text-secondary transition-colors">
                                     {{ $label }}
                                 </span>
-                                <span class="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 dark:bg-primary/20 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:scale-110">
+                                <span class="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 dark:bg-primary/20 text-primary transition-all duration-300 group-hover:bg-secondary group-hover:text-white group-hover:scale-110">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </span>
                             </a>
                             @endforeach
                         </div>
-
-                        {{-- ================= GUIDE SECTION ================= --}}
-                        <div class="text-center mb-12">
-                            <h3 class="text-3xl font-semibold text-secondary dark:text-primary mb-2">
-                                Panduan Pendaftaran
-                            </h3>
-                            <p class="text-gray-600 dark:text-gray-300">
-                                Klik poin berikut untuk melihat detail informasi
-                            </p>
-                        </div>
-
                         {{-- Guide Buttons Grid --}}
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                             @php
@@ -66,11 +55,11 @@
 
                             @foreach($buttons as [$id,$label,$icon])
                             <button onclick="openModal('{{ $id }}')"
-                                    class="modal-btn group relative flex items-center justify-center gap-4 rounded-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-secondary dark:text-gray-100 shadow-sm dark:shadow-black/30 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:border-primary cursor-pointer">
-                                <span class="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 dark:bg-primary/20 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:scale-110">
+                                    class="modal-btn group relative flex items-center justify-center gap-4 rounded-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-secondary dark:text-gray-100 shadow-sm dark:shadow-black/30 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:border-secondary cursor-pointer">
+                                <span class="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 dark:bg-primary/20 text-primary transition-all duration-300 group-hover:bg-secondary group-hover:text-white group-hover:scale-110">
                                     <i class="fa-solid {{ $icon }}"></i>
                                 </span>
-                                <span class="text-lg font-semibold tracking-tight group-hover:text-primary transition-colors">
+                                <span class="text-lg font-semibold tracking-tight transition-colors">
                                     {{ $label }}
                                 </span>
                             </button>

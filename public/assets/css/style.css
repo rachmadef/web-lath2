@@ -9496,9 +9496,7 @@ input[type=number] {
   align-items: center;
   justify-content: space-between;
   border-radius: var(--radius-2lg);
-  background-color: var(--color-white);
-  padding: calc(var(--spacing) * 5);
-  padding-left: calc(var(--spacing) * 7.5);
+  background-color: var(--color-white);  
   text-align: start;
   --tw-duration: 300ms;
   transition-duration: 300ms;

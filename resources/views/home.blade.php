@@ -7,122 +7,90 @@
     <div id="smooth-content">
         <div class="page-content py-10 sm:pt-10">
             <!-- Main Banner Section -->
-            <section
-                class="main-banner my-4 relative xl:h-screen xl:min-h-237.5 xl:max-h-237.5 overflow-hidden before:bg-[url('../images/background/bg2.png')] before:size-full before:z-1 before:bg-center before:bg-no-repeat before:bg-cover before:absolute bg-no-repeat bg-cover 2xl:mx-10 sm:mx-3.5 mx-2 rounded-2xl max-sm:min-h-[500px]">
+            <section class="main-banner my-4 relative xl:h-screen xl:min-h-237.5 xl:max-h-237.5 overflow-hidden before:bg-[url('../images/background/bg2.png')] before:size-full before:z-1 before:bg-center before:bg-no-repeat before:bg-cover before:absolute bg-no-repeat bg-cover 2xl:mx-10 sm:mx-3.5 mx-2 rounded-2xl max-sm:min-h-[500px]">
                 <img class="size-full object-cover absolute" src="images/bg.jpeg" alt="img" data-speed=".20">
                 <div class="container relative z-1 px-4 sm:px-6 lg:px-8">
                     <div class="grid grid-cols-12 gap-5 items-start sm:pt-32.5 pt-20">
                         <!-- Left Column -->
                         <div class="xl:col-span-6 col-span-12 max-3xl:pl-20 pt-10 max-lg:pl-10 max-md:pl-0">
                             <!-- Logo Section -->
-                            <div
-                                class="flex gap-4 sm:gap-3 lg:gap-4 mb-4 sm:mb-6 lg:mb-8 xl:justify-start justify-center">
-                                <img src="{{ asset('images/logo.jpg') }}" alt="logo-light"
-                                    class="rounded-full object-cover" style="width: 60px;">
-                                <img src="{{ asset('images/logo.jpg') }}" alt="logo-light"
-                                    class="rounded-full object-cover" style="width: 60px;">
-                                <img src="{{ asset('images/logo.jpg') }}" alt="logo-light"
-                                    class="rounded-full object-cover" style="width: 60px;">
+                            <div class="flex gap-4 sm:gap-3 lg:gap-4 mb-4 sm:mb-6 lg:mb-8 xl:justify-start justify-center">
+                                <img src="{{ asset('images/logo.jpg') }}" alt="logo-light" class="rounded-full object-cover" style="width: 60px;">
+                                <img src="{{ asset('images/logo.jpg') }}" alt="logo-light" class="rounded-full object-cover" style="width: 60px;">
+                                <img src="{{ asset('images/logo.jpg') }}" alt="logo-light" class="rounded-full object-cover" style="width: 60px;">
                             </div>
                             <div class="3xl:pt-32 xl:pt-24 lg:pt-20 md:pt-16 sm:pt-12 pt-8 text-center">
                                 <div class="mb-8 sm:mb-12 md:mb-16">
                                     <!-- Welcome Badge -->
                                     <div class="mb-5 sm:mb-6">
-                                        <span
-                                            class="inline-block px-4 sm:px-5 py-2 sm:py-2.5 text-sm sm:text-base lg:text-lg font-medium text-white rounded-2xl border border-white/20 backdrop-blur-[20px] bg-white/10 transition-all duration-300 hover:bg-white/15">
+                                        <span class="inline-block px-4 sm:px-5 py-2 sm:py-2.5 text-sm sm:text-base lg:text-lg font-medium text-white rounded-2xl border border-white/20 backdrop-blur-[20px] bg-white/10 transition-all duration-300 hover:bg-white/15">
                                             Selamat Datang di Pondok Pesantren
                                         </span>
                                     </div>
-
                                     <!-- Main Heading -->
-                                    <h1
-                                        class="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-8xl 2xl:text-9xl font-semibold headline text-white leading-tight sm:leading-tight md:leading-tight lg:leading-tight mb-3 sm:mb-4">
+                                    <h1 class="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-8xl 2xl:text-9xl font-semibold headline text-white leading-tight sm:leading-tight md:leading-tight lg:leading-tight mb-3 sm:mb-4">
                                         Al Wahabiyyah 1
                                         <br class="hidden xs:block">
                                         <span class="block sm:inline">&amp; Al Lathifiyyah 2</span>
                                     </h1>
-
                                     <!-- Subtitle -->
-                                    <p
-                                        class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-primary font-medium mt-2 sm:mt-3">
+                                    <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-primary font-medium mt-2 sm:mt-3">
                                         Bahrul Ulum Tambakberas Jombang
                                     </p>
                                 </div>
-
                                 <!-- CTA Button -->
-                                <div
-                                    class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-5">
-                                    <a href="{{ url('/daftar') }}"
-                                        class="group relative inline-flex items-center justify-center w-full sm:w-auto min-w-[200px] bg-white hover:bg-gray-50 border border-white hover:border-primary rounded-full px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-medium text-secondary hover:text-primary transition-all duration-500 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                                <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-5">
+                                    <a href="{{ url('/daftar') }}" class="group relative inline-flex items-center justify-center w-full sm:w-auto min-w-[200px] bg-white hover:bg-secondary border border-white hover:border-secondary rounded-full px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-medium text-secondary hover:text-white transition-all duration-500 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                                         <span class="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
                                             Daftar Sekarang
-                                            <span
-                                                class="bg-primary text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center transition-all duration-500 group-hover:bg-secondary group-hover:scale-110">
-                                                <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-500 group-hover:rotate-45"
-                                                    width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M7 7H17V17" stroke="currentColor" stroke-width="1.5"
-                                                        stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path d="M7 17L17 7" stroke="currentColor" stroke-width="1.5"
-                                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <span class="bg-secondary text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center transition-all duration-500 group-hover:bg-primary group-hover:scale-110">
+                                                <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-500 group-hover:text-secondary group-hover:rotate-45" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M7 7H17V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    <path d="M7 17L17 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                                                 </svg>
                                             </span>
                                         </span>
                                     </a>
                                 </div>
                             </div>
-
                             <!-- Mobile Image -->
                             <div class="xl:col-span-6 col-span-12 mt-8 sm:hidden">
                                 <div class="swiper slide-transited !overflow-visible">
                                     <div class="swiper-wrapper">
-                                        <div
-                                            class="swiper-slide !opacity-0 [.swiper-slide.swiper-slide-active]:!opacity-100">
+                                        <div class="swiper-slide !opacity-0 [.swiper-slide.swiper-slide-active]:!opacity-100">
                                             <div class="flex justify-center">
-                                                <img src="images/ibuk.png" alt="img"
-                                                    class="wow bounceInUp object-cover w-full max-w-md">
+                                                <img src="images/ibuk.png" alt="img" class="wow bounceInUp object-cover w-full max-w-md">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                             <!-- Stats Section -->
                             <div class="flex items-center relative mt-8 mb-4 sm:mt-10 xl:w-full lg:w-[80%]">
-                                <div
-                                    class="border-t border-l border-white/5 rounded-tl-xxl max-xl:rounded-bl-xxl py-2.5 px-3.5 sm:px-4.5 lg:px-7.5 dark:text-white w-[60%] bg-white/5 backdrop-blur-[20px] flex items-center shadow-[inset_0px_2px_2px_rgba(255,255,255,0.1)]">
-                                    <span
-                                        class="text-2xl sm:text-3xl lg:text-4xxxl font-semibold mr-2 sm:mr-2 lg:mr-3.75 text-white value"
-                                        data-akhi="200">200</span>
+                                <div class="border-t border-l border-white/5 rounded-tl-xxl max-xl:rounded-bl-xxl py-2.5 px-3.5 sm:px-4.5 lg:px-7.5 dark:text-white w-[60%] bg-white/5 backdrop-blur-[20px] flex items-center shadow-[inset_0px_2px_2px_rgba(255,255,255,0.1)]">
+                                    <span class="text-2xl sm:text-3xl lg:text-4xxxl font-semibold mr-2 sm:mr-2 lg:mr-3.75 text-white value" data-akhi="200">200</span>
                                     <span class="font-semibold text-2xl sm:text-3xl lg:text-4xxxl text-white">+</span>
-                                    <p
-                                        class="text-xs sm:text-sm lg:text-base font-medium text-white ml-2 sm:ml-2 text-left">
+                                    <p class="text-xs sm:text-sm lg:text-base font-medium text-white ml-2 sm:ml-2 text-left">
                                         Santri Mondok<br class="sm:hidden"> disini
                                     </p>
                                 </div>
-                                <div
-                                    class="bg-primary py-2.5 px-3.5 sm:px-4.5 lg:px-7.5 w-[40%] rounded-tr-2lg max-xl:rounded-br-2lg">
+                                <div class="bg-primary py-2.5 px-3.5 sm:px-4.5 lg:px-7.5 w-[40%] rounded-tr-2lg max-xl:rounded-br-2lg">
                                     <div class="flex items-center">
-                                        <span
-                                            class="font-semibold text-2xl sm:text-3xl lg:text-4xxxl text-secondary">16</span>
-                                        <p
-                                            class="ml-2 sm:ml-2 lg:ml-3.75 text-xs sm:text-sm lg:text-base font-medium text-secondary">
+                                        <span class="font-semibold text-2xl sm:text-3xl lg:text-4xxxl text-secondary">16</span>
+                                        <p class="ml-2 sm:ml-2 lg:ml-3.75 text-xs sm:text-sm lg:text-base font-medium text-secondary">
                                             Lembaga<br> Pendidikan
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                         <!-- Desktop Image -->
                         <div class="xl:col-span-6 col-span-12 max-sm:hidden hidden sm:block">
                             <div class="swiper slide-transited !overflow-visible">
                                 <div class="swiper-wrapper">
-                                    <div
-                                        class="swiper-slide !opacity-0 [.swiper-slide.swiper-slide-active]:!opacity-100">
+                                    <div class="swiper-slide !opacity-0 [.swiper-slide.swiper-slide-active]:!opacity-100">
                                         <div class="xl:w-[50vw] relative xl:right-25 right-0 flex justify-end">
-                                            <img src="images/ibuk.png" alt="img"
-                                                class="wow bounceInUp object-cover max-lg:w-[90%] max-xl:w-[80%]">
+                                            <img src="images/ibuk.png" alt="img" class="wow bounceInUp object-cover max-lg:w-[90%] max-xl:w-[80%]">
                                         </div>
                                     </div>
                                 </div>
@@ -130,155 +98,131 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Social Media Sidebar -->
                 <div class="absolute left-11 sm:left-6 lg:left-11 top-[30%] -translate-x-1/2 max-sm:hidden z-1">
                     <ul class="mb-0 flex items-center [writing-mode:vertical-rl] relative">
                         <li class="text-center mx-2 sm:mx-3 lg:mx-3.75">
-                            <a class="text-white/30 text-sm sm:text-base font-medium relative duration-500 flex items-center flex-col group hover:text-primary after:absolute after:-left-0.5 after:top-0 after:w-px after:h-0 after:bottom-auto after:bg-primary after:duration-500 hover:after:w-px hover:after:h-full"
-                                href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                            <a class="text-white/30 text-sm sm:text-base font-medium relative duration-500 flex items-center flex-col group hover:text-primary after:absolute after:-left-0.5 after:top-0 after:w-px after:h-0 after:bottom-auto after:bg-primary after:duration-500 hover:after:w-px hover:after:h-full" href="https://www.instagram.com" target="_blank" aria-label="Instagram">
                                 Instagram
-                                <i
-                                    class="fa-brands fa-instagram text-white text-lg sm:text-xl absolute -z-1 h-full duration-500 opacity-0 flex items-center justify-center bg-pink group-hover:translate-x-6.5 group-hover:opacity-100 rotate-90"></i>
+                                <i class="fa-brands fa-instagram text-white text-lg sm:text-xl absolute -z-1 h-full duration-500 opacity-0 flex items-center justify-center bg-pink group-hover:translate-x-6.5 group-hover:opacity-100 rotate-90"></i>
                             </a>
                         </li>
                         <li class="text-center mx-2 sm:mx-3 lg:mx-3.75">
-                            <a class="text-white/30 text-sm sm:text-base font-medium relative duration-500 flex items-center flex-col group hover:text-primary after:absolute after:-left-0.5 after:top-0 after:w-px after:h-0 after:bottom-auto after:bg-primary after:duration-500 hover:after:w-px hover:after:h-full"
-                                href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                            <a class="text-white/30 text-sm sm:text-base font-medium relative duration-500 flex items-center flex-col group hover:text-primary after:absolute after:-left-0.5 after:top-0 after:w-px after:h-0 after:bottom-auto after:bg-primary after:duration-500 hover:after:w-px hover:after:h-full" href="https://www.facebook.com" target="_blank" aria-label="Facebook">
                                 Facebook
-                                <i
-                                    class="fa-brands fa-facebook-f text-white text-lg sm:text-xl absolute -z-1 h-full duration-500 opacity-0 flex items-center justify-center bg-pink group-hover:translate-x-7.5 group-hover:opacity-100 rotate-90"></i>
+                                <i class="fa-brands fa-facebook-f text-white text-lg sm:text-xl absolute -z-1 h-full duration-500 opacity-0 flex items-center justify-center bg-pink group-hover:translate-x-7.5 group-hover:opacity-100 rotate-90"></i>
                             </a>
                         </li>
                         <li class="text-center mx-2 sm:mx-3 lg:mx-3.75">
-                            <a class="text-white/30 text-sm sm:text-base font-medium relative duration-500 flex items-center flex-col group hover:text-primary after:absolute after:-left-0.5 after:top-0 after:w-px after:h-0 after:bottom-auto after:bg-primary after:duration-500 hover:after:w-px hover:after:h-full"
-                                href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                            <a class="text-white/30 text-sm sm:text-base font-medium relative duration-500 flex items-center flex-col group hover:text-primary after:absolute after:-left-0.5 after:top-0 after:w-px after:h-0 after:bottom-auto after:bg-primary after:duration-500 hover:after:w-px hover:after:h-full" href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
                                 LinkedIn
-                                <i
-                                    class="fa-brands fa-linkedin-in text-white text-lg sm:text-xl absolute -z-1 h-full duration-500 opacity-0 flex items-center justify-center bg-pink group-hover:translate-x-7.5 group-hover:opacity-100 rotate-90"></i>
+                                <i class="fa-brands fa-linkedin-in text-white text-lg sm:text-xl absolute -z-1 h-full duration-500 opacity-0 flex items-center justify-center bg-pink group-hover:translate-x-7.5 group-hover:opacity-100 rotate-90"></i>
                             </a>
                         </li>
                         <li class="text-center mx-2 sm:mx-3 lg:mx-3.75">
-                            <a class="text-white/30 text-sm sm:text-base font-medium relative duration-500 flex items-center flex-col group hover:text-primary after:absolute after:-left-0.5 after:top-0 after:w-px after:h-0 after:bottom-auto after:bg-primary after:duration-500 hover:after:w-px hover:after:h-full"
-                                href="https://www.x.com" target="_blank" aria-label="twitter">
+                            <a class="text-white/30 text-sm sm:text-base font-medium relative duration-500 flex items-center flex-col group hover:text-primary after:absolute after:-left-0.5 after:top-0 after:w-px after:h-0 after:bottom-auto after:bg-primary after:duration-500 hover:after:w-px hover:after:h-full" href="https://www.x.com" target="_blank" aria-label="twitter">
                                 x
-                                <i
-                                    class="fa-brands fa-x-twitter text-white text-lg sm:text-xl absolute -z-1 h-full duration-500 opacity-0 flex items-center justify-center bg-pink group-hover:translate-x-7.5 group-hover:opacity-100 rotate-90"></i>
+                                <i class="fa-brands fa-x-twitter text-white text-lg sm:text-xl absolute -z-1 h-full duration-500 opacity-0 flex items-center justify-center bg-pink group-hover:translate-x-7.5 group-hover:opacity-100 rotate-90"></i>
                             </a>
                         </li>
                     </ul>
                 </div>
             </section>
+            
             <section class="xl:py-36.25 py-10">
                 <div class="container">
                     <div class="grid grid-cols-12 sm:gap-11.25">
                         <div class="lg:col-span-5 col-span-12">
                             <div class="overflow-hidden size-full relative">
                                 <div class="group dz-hover-item relative size-full">
-                                    <a class="dz-hover-img rounded-2lg relative size-full"
-                                        data-displacement="assets/images/1.avif" data-intensity="0.6" data-speedin="1"
-                                        data-speedout="1">
-                                        <img class="rounded-xxl size-full object-cover transform transition-transform duration-1000 group-hover:scale-110"
-                                            src="images/model1.jpeg" alt="img">
+                                    <a class="dz-hover-img rounded-2lg relative size-full" data-displacement="assets/images/1.avif" data-intensity="0.6" data-speedin="1" data-speedout="1">
+                                        <img class="rounded-xxl size-full object-cover transform transition-transform duration-1000 group-hover:scale-110" src="images/model1.jpeg" alt="img">
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div class="lg:col-span-7 col-span-12 2xl:ml-25 lg:ml-10 max-lg:mt-10">
-                            <h1
-                                class="2xl:text-5xl lg:text-4xxl sm:text-4xl text-3xl font-semibold headline mb-3 dark:text-white text-secondary sm:pr-15">
-                                Ayo Mondok!</h1>
-                            <p class="sm:text-xl text-lg text-primary">di Pondok Pesantren Al Wahabiyyah 1 dan Al
-                                Lathifiyyah 2 Bahrul Ulum</p>
+                            <h1 class="2xl:text-5xl lg:text-4xxl sm:text-4xl text-3xl font-semibold headline mb-3 dark:text-white text-secondary sm:pr-15">
+                                Ayo Mondok!
+                            </h1>
+                            <p class="sm:text-xl text-lg text-primary">
+                                di Pondok Pesantren Al Wahabiyyah 1 dan Al Lathifiyyah 2 Bahrul Ulum
+                            </p>
                             <div class="mt-10">
                                 <div class="custom-accordion style-1 myAccordion">
                                     <div class="accordion-item">
-                                        <div class="accordion-header open">
+                                        <div class="accordion-header px-4 py-2 open">
                                             <h4 class="acod-title w-full">
-                                                <a
-                                                    class="text-secondary sm:text-lg text-base font-medium flex relative z-1 overflow-hidden w-full justify-between items-center arrow">
-                                                    Apa keunggulan mondok di pesantren kami?
-                                                    <span
-                                                        class="indicator bg-primary rounded-full size-7.5 flex items-center justify-center duration-500">
-                                                        <i class="las la-angle-down text-2sm"></i>
-                                                    </span>
+                                                <a class="text-secondary sm:text-lg text-base font-medium flex relative z-1 overflow-hidden w-full justify-between items-center arrow">
+													<p class="pr-4 sm:pr-6 lg:pr-8 text-sm sm:text-base lg:text-lg">
+														Apa keunggulan mondok di pesantren kami?
+													</p>
+													<span class="indicator bg-primary rounded-full size-6 sm:size-7 lg:size-7.5 flex items-center justify-center duration-500 flex-shrink-0">
+														<i class="las la-angle-down text-xs sm:text-sm lg:text-2sm"></i>
+													</span>
                                                 </a>
                                             </h4>
                                         </div>
                                         <div class="accordion-content">
                                             <div class="content-inner">
-                                                Pondok Pesantren Al Wahabiyyah 1 dan Al Lathifiyyah 2 Bahrul Ulum
-                                                berkomitmen mencetak santri yang beriman, bertaqwa, berilmu, dan
-                                                berakhlakul karimah. Pembelajaran mengintegrasikan pendidikan diniyah,
-                                                akademik, dan pembinaan karakter, dibimbing langsung oleh para asatidz
-                                                yang berpengalaman dalam suasana pesantren yang kondusif, disiplin, dan
-                                                religius.
+                                                Pondok Pesantren Al Wahabiyyah 1 dan Al Lathifiyyah 2 Bahrul Ulum berkomitmen mencetak santri yang beriman, bertaqwa, berilmu, dan berakhlakul karimah. Pembelajaran mengintegrasikan pendidikan diniyah, akademik, dan pembinaan karakter, dibimbing langsung oleh para asatidz yang berpengalaman dalam suasana pesantren yang kondusif, disiplin, dan religius.
                                             </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
-                                        <div class="accordion-header">
+                                        <div class="accordion-header px-4 py-2">
                                             <h4 class="acod-title w-full">
-                                                <a
-                                                    class="text-secondary sm:text-lg text-base font-medium flex relative z-1 overflow-hidden w-full justify-between items-center arrow">
-                                                    Untuk siapa Pondok Pesantren ini didirikan?
-                                                    <span
-                                                        class="indicator bg-primary rounded-full size-7.5 flex items-center justify-center duration-500">
-                                                        <i class="las la-angle-down text-2sm"></i>
-                                                    </span>
+                                                <a class="text-secondary sm:text-lg text-base font-medium flex relative z-1 overflow-hidden w-full justify-between items-center arrow">
+													<p class="pr-4 sm:pr-6 lg:pr-8 text-sm sm:text-base lg:text-lg">
+														Untuk siapa Pondok Pesantren ini didirikan?
+													</p>
+													<span class="indicator bg-primary rounded-full size-6 sm:size-7 lg:size-7.5 flex items-center justify-center duration-500 flex-shrink-0">
+														<i class="las la-angle-down text-xs sm:text-sm lg:text-2sm"></i>
+													</span>
                                                 </a>
                                             </h4>
                                         </div>
                                         <div class="accordion-content">
                                             <div class="content-inner">
-                                                Pesantren ini terbuka bagi pelajar dan generasi muda yang ingin menimba
-                                                ilmu agama sekaligus membentuk karakter islami yang kuat. Cocok bagi
-                                                santri yang ingin tumbuh menjadi pribadi mandiri, disiplin, berakhlak
-                                                mulia, serta siap menghadapi tantangan zaman dengan bekal iman dan ilmu.
+                                                Pesantren ini terbuka bagi pelajar dan generasi muda yang ingin menimba ilmu agama sekaligus membentuk karakter islami yang kuat. Cocok bagi santri yang ingin tumbuh menjadi pribadi mandiri, disiplin, berakhlak mulia, serta siap menghadapi tantangan zaman dengan bekal iman dan ilmu.
                                             </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
-                                        <div class="accordion-header">
+                                        <div class="accordion-header px-4 py-2">
                                             <h4 class="acod-title w-full">
-                                                <a
-                                                    class="text-secondary sm:text-lg text-base font-medium flex relative z-1 overflow-hidden w-full justify-between items-center arrow">
-                                                    Ilmu apa saja yang akan didapatkan santri?
-                                                    <span
-                                                        class="indicator bg-primary rounded-full size-7.5 flex items-center justify-center duration-500">
-                                                        <i class="las la-angle-down text-2sm"></i>
-                                                    </span>
+                                                <a class="text-secondary sm:text-lg text-base font-medium flex relative z-1 overflow-hidden w-full justify-between items-center arrow">
+													<p class="pr-4 sm:pr-6 lg:pr-8 text-sm sm:text-base lg:text-lg">
+														Ilmu apa saja yang akan didapatkan santri?
+													</p>
+													<span class="indicator bg-primary rounded-full size-6 sm:size-7 lg:size-7.5 flex items-center justify-center duration-500 flex-shrink-0">
+														<i class="las la-angle-down text-xs sm:text-sm lg:text-2sm"></i>
+													</span>
                                                 </a>
                                             </h4>
                                         </div>
                                         <div class="accordion-content">
                                             <div class="content-inner">
-                                                Santri akan mempelajari ilmu-ilmu keislaman seperti Al-Qur’an, fiqih,
-                                                akidah, akhlak, serta kitab-kitab klasik (kitab kuning). Selain itu,
-                                                santri juga dibekali pendidikan formal dan pengembangan diri, sehingga
-                                                mampu menyeimbangkan antara ilmu agama dan ilmu umum.
+                                                Santri akan mempelajari ilmu-ilmu keislaman seperti Al-Qur'an, fiqih, akidah, akhlak, serta kitab-kitab klasik (kitab kuning). Selain itu, santri juga dibekali pendidikan formal dan pengembangan diri, sehingga mampu menyeimbangkan antara ilmu agama dan ilmu umum.
                                             </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
-                                        <div class="accordion-header">
+                                        <div class="accordion-header px-4 py-2">
                                             <h4 class="acod-title w-full">
-                                                <a
-                                                    class="text-secondary sm:text-lg text-base font-medium flex relative z-1 overflow-hidden w-full justify-between items-center arrow">
-                                                    Bagaimana pesantren membentuk akhlak dan karakter santri?
-                                                    <span
-                                                        class="indicator bg-primary rounded-full size-7.5 flex items-center justify-center duration-500">
-                                                        <i class="las la-angle-down text-2sm"></i>
-                                                    </span>
+                                                <a class="text-secondary sm:text-lg text-base font-medium flex relative z-1 overflow-hidden w-full justify-between items-center arrow">
+													<p class="pr-4 sm:pr-6 lg:pr-8 text-sm sm:text-base lg:text-lg">
+														Bagaimana pesantren membentuk akhlak dan karakter santri?
+													</p>
+													<span class="indicator bg-primary rounded-full size-6 sm:size-7 lg:size-7.5 flex items-center justify-center duration-500 flex-shrink-0">
+														<i class="las la-angle-down text-xs sm:text-sm lg:text-2sm"></i>
+													</span>
                                                 </a>
                                             </h4>
                                         </div>
                                         <div class="accordion-content">
                                             <div class="content-inner">
-                                                Pembentukan karakter dilakukan melalui pembiasaan ibadah, kedisiplinan,
-                                                keteladanan guru, serta kehidupan berjamaah di pesantren. Santri dibina
-                                                untuk hidup sederhana, bertanggung jawab, saling menghormati, dan
-                                                mengamalkan nilai-nilai Islam dalam kehidupan sehari-hari.
+                                                Pembentukan karakter dilakukan melalui pembiasaan ibadah, kedisiplinan, keteladanan guru, serta kehidupan berjamaah di pesantren. Santri dibina untuk hidup sederhana, bertanggung jawab, saling menghormati, dan mengamalkan nilai-nilai Islam dalam kehidupan sehari-hari.
                                             </div>
                                         </div>
                                     </div>
@@ -288,351 +232,386 @@
                     </div>
                 </div>
             </section>
-            <section
-                class="main-banner relative bg-bglight xl:h-187.5 overflow-hidden before:bg-[url('../images/background/bg2.png')] before:size-full before:z-1 before:bg-center before:bg-no-repeat before:bg-cover before:absolute bg-no-repeat bg-cover 2xl:mx-10 mx-3.5 rounded-2xl">
+            
+            <section class="main-banner relative bg-bglight overflow-hidden before:bg-[url('../images/background/bg2.png')] before:size-full before:z-1 before:bg-center before:bg-no-repeat before:bg-cover before:absolute bg-no-repeat bg-cover 2xl:mx-10 mx-3.5 rounded-2xl">
                 <img class="size-full object-cover absolute scale-130" src="images/bg.jpeg" alt="img" data-speed=".5">
-                <div class="container xl:py-32.5 py-10 relative z-1">
-                    <div class="grid grid-cols-12 gap-5 items-start">
+                <div class="px-6 xl:py-24 py-12 relative z-1">
+                    <div class="grid grid-cols-12 gap-5 items-center">
                         <div class="xl:col-span-4 col-span-12 pl-4 xl:pt-12.5">
-                            <h1
-                                class="2xl:text-5xl lg:text-4xxl sm:text-4xl text-3xl font-semibold headline xl:mt-5 text-white">
-                                Tentang Pondok Kami</h1>
-                            <p class="sm:text-xl text-lg text-primary">Mengenal Lebih Dekat Visi, Misi, dan Perjalanan
-                                Kami</p>
+                            <h1 class="2xl:text-5xl lg:text-4xxl sm:text-4xl text-3xl font-semibold headline xl:mt-5 text-white">
+                                Tentang Pondok Kami
+                            </h1>
+                            <p class="sm:text-xl text-lg text-primary">
+                                Mengenal Lebih Dekat Visi, Misi, dan Perjalanan Kami
+                            </p>
                         </div>
                         <div class="xl:col-span-8 col-span-12">
-							<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-								<!-- Card Profil Pondok -->
-								@if($profil)
-								<div class="group bg-white rounded-2xl overflow-hidden shadow-md
-											transition hover:shadow-lg
-											flex flex-row md:flex-col
-											h-auto md:h-full">
-									
-									<!-- THUMBNAIL -->
-									<a href="{{ route('profil') }}"
-										class="block w-28 min-w-[7rem] h-full md:w-full md:h-48 overflow-hidden">
-										
-										@if($profil->thumbnail)
-										<img src="{{ asset('storage/' . $profil->thumbnail) }}" 
-											alt="{{ $profil->title }}"
-											class="w-full h-full object-cover
-													md:group-hover:scale-105 transition-transform duration-500">
-										@else
-										<div class="w-full h-full bg-gradient-to-r from-primary to-secondary 
-												flex items-center justify-center">
-											<svg class="size-16 text-white" fill="none" stroke="currentColor" 
-												viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-													d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-												</path>
-											</svg>
-										</div>
-										@endif
-									</a>
-
-									<!-- CONTENT -->
-									<div class="flex flex-col justify-between p-3 sm:p-4 w-full">
-										<!-- TITLE -->
-										<h4 class="text-secondary font-semibold
-												text-sm sm:text-base
-												leading-snug line-clamp-2 mb-2">
-											<a href="{{ route('profil') }}">
-												{{ $profil->title }}
-											</a>
-										</h4>
-
-										<!-- DESCRIPTION -->
-										<p class="text-gray-600 text-xs mb-2 line-clamp-2">
-											{{ Str::limit(strip_tags($profil->content), 100) }}
-										</p>
-
-										<!-- DATE (jika ada) -->
-										@if($profil->published_at)
-										<span class="text-xs text-gray-500">
-											{{ $profil->published_at->format('d M Y') }}
-										</span>
-										@elseif($profil->created_at)
-										<span class="text-xs text-gray-500">
-											{{ $profil->created_at->format('d M Y') }}
-										</span>
-										@endif
-									</div>
-								</div>
-								@endif
-
-								<!-- Card Sejarah Pondok -->
-								@if($sejarah)
-								<div class="group bg-white rounded-2xl overflow-hidden shadow-md
-											transition hover:shadow-lg
-											flex flex-row md:flex-col
-											h-auto md:h-full">
-									
-									<!-- THUMBNAIL -->
-									<a href="{{ route('sejarah') }}"
-										class="block w-28 min-w-[7rem] h-full md:w-full md:h-48 overflow-hidden">
-										
-										@if($sejarah->thumbnail)
-										<img src="{{ asset('storage/' . $sejarah->thumbnail) }}" 
-											alt="{{ $sejarah->title }}"
-											class="w-full h-full object-cover
-													md:group-hover:scale-105 transition-transform duration-500">
-										@else
-										<div class="w-full h-full bg-gradient-to-r from-primary to-secondary 
-												flex items-center justify-center">
-											<svg class="size-16 text-white" fill="none" stroke="currentColor" 
-												viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-													d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-											</svg>
-										</div>
-										@endif
-									</a>
-
-									<!-- CONTENT -->
-									<div class="flex flex-col justify-between p-3 sm:p-4 w-full">
-										<!-- TITLE -->
-										<h4 class="text-secondary font-semibold
-												text-sm sm:text-base
-												leading-snug line-clamp-2 mb-2">
-											<a href="{{ route('sejarah') }}">
-												{{ $sejarah->title }}
-											</a>
-										</h4>
-
-										<!-- DESCRIPTION -->
-										<p class="text-gray-600 text-xs mb-2 line-clamp-2">
-											{{ Str::limit(strip_tags($sejarah->content), 100) }}
-										</p>
-
-										<!-- DATE (jika ada) -->
-										@if($sejarah->published_at)
-										<span class="text-xs text-gray-500">
-											{{ $sejarah->published_at->format('d M Y') }}
-										</span>
-										@elseif($sejarah->created_at)
-										<span class="text-xs text-gray-500">
-											{{ $sejarah->created_at->format('d M Y') }}
-										</span>
-										@endif
-									</div>
-								</div>
-								@endif
-
-								<!-- Jika data tidak ditemukan, tampilkan placeholder -->
-								@if(!$profil && !$sejarah)
-								<div class="col-span-2">
-									<div class="bg-gradient-to-r from-primary/20 to-secondary/20 
-												rounded-2xl p-8 text-center">
-										<p class="text-gray-600">Data belum tersedia</p>
-									</div>
-								</div>
-								@endif
-							</div>
-						</div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <!-- Card Profil Pondok -->
+                                @if($profil)
+                                <div class="group bg-white rounded-2xl overflow-hidden shadow-md transition hover:shadow-lg flex flex-row md:flex-col h-auto md:h-full">
+                                    <!-- THUMBNAIL -->
+                                    <a href="{{ route('profil') }}" class="block w-28 min-w-[7rem] h-full md:w-full md:h-48 overflow-hidden">
+                                        @if($profil->thumbnail)
+                                        <img src="{{ asset('storage/' . $profil->thumbnail) }}" alt="{{ $profil->title }}" class="w-full h-full object-cover md:group-hover:scale-105 transition-transform duration-500">
+                                        @else
+                                        <div class="w-full h-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                                            <svg class="size-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                            </svg>
+                                        </div>
+                                        @endif
+                                    </a>
+                                    <!-- CONTENT -->
+                                    <div class="flex flex-col justify-between p-3 sm:p-4 w-full">
+                                        <!-- TITLE -->
+                                        <h4 class="text-secondary font-semibold text-sm sm:text-base leading-snug line-clamp-2 mb-2">
+                                            <a href="{{ route('profil') }}">
+                                                {{ $profil->title }}
+                                            </a>
+                                        </h4>
+                                        <!-- DESCRIPTION -->
+                                        <p class="text-gray-600 text-xs mb-2 line-clamp-2">
+                                            {{ Str::limit(strip_tags($profil->content), 100) }}
+                                        </p>
+                                        <!-- DATE (jika ada) -->
+                                        @if($profil->published_at)
+                                        <span class="text-xs text-gray-500">
+                                            {{ $profil->published_at->format('d M Y') }}
+                                        </span>
+                                        @elseif($profil->created_at)
+                                        <span class="text-xs text-gray-500">
+                                            {{ $profil->created_at->format('d M Y') }}
+                                        </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                @endif
+                                <!-- Card Sejarah Pondok -->
+                                @if($sejarah)
+                                <div class="group bg-white rounded-2xl overflow-hidden shadow-md transition hover:shadow-lg flex flex-row md:flex-col h-auto md:h-full">
+                                    <!-- THUMBNAIL -->
+                                    <a href="{{ route('sejarah') }}" class="block w-28 min-w-[7rem] h-full md:w-full md:h-48 overflow-hidden">
+                                        @if($sejarah->thumbnail)
+                                        <img src="{{ asset('storage/' . $sejarah->thumbnail) }}" alt="{{ $sejarah->title }}" class="w-full h-full object-cover md:group-hover:scale-105 transition-transform duration-500">
+                                        @else
+                                        <div class="w-full h-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                                            <svg class="size-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                        </div>
+                                        @endif
+                                    </a>
+                                    <!-- CONTENT -->
+                                    <div class="flex flex-col justify-between p-3 sm:p-4 w-full">
+                                        <!-- TITLE -->
+                                        <h4 class="text-secondary font-semibold text-sm sm:text-base leading-snug line-clamp-2 mb-2">
+                                            <a href="{{ route('sejarah') }}">
+                                                {{ $sejarah->title }}
+                                            </a>
+                                        </h4>
+                                        <!-- DESCRIPTION -->
+                                        <p class="text-gray-600 text-xs mb-2 line-clamp-2">
+                                            {{ Str::limit(strip_tags($sejarah->content), 100) }}
+                                        </p>
+                                        <!-- DATE (jika ada) -->
+                                        @if($sejarah->published_at)
+                                        <span class="text-xs text-gray-500">
+                                            {{ $sejarah->published_at->format('d M Y') }}
+                                        </span>
+                                        @elseif($sejarah->created_at)
+                                        <span class="text-xs text-gray-500">
+                                            {{ $sejarah->created_at->format('d M Y') }}
+                                        </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                @endif
+                                <!-- Jika data tidak ditemukan, tampilkan placeholder -->
+                                @if(!$profil && !$sejarah)
+                                <div class="col-span-2">
+                                    <div class="bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl p-8 text-center">
+                                        <p class="text-gray-600">Data belum tersedia</p>
+                                    </div>
+                                </div>
+                                @endif
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
+            
             <!-- News Section -->
-            <section class="relative my-6 overflow-hidden rounded-2xl bg-cover bg-center	2xl:mx-10 sm:mx-4 mx-2 xl:min-h-[600px] max-sm:min-h-[520px]">
-                <div class="relative z-10 xl:py-20 sm:py-16 py-12">
-                    <!-- Header -->
-                    <div class="container px-4 sm:px-6 lg:px-8">
-                        <div class="flex flex-col sm:flex-row gap-6 justify-between items-start sm:items-end mb-10">
-                            <div class="max-w-3xl">
-                                <h2 class="font-semibold text-secondary dark:text-white
-											2xl:text-[55px] lg:text-5xl sm:text-4xl text-2xl leading-tight mb-3">
-                                    Berita dan Artikel
-                                </h2>
-                                <p class="text-gray-600 dark:text-primary text-lg sm:text-base max-w-2xl">
-                                    Temukan berita terbaru dan artikel menarik seputar perkembangan terkini
-                                </p>
-                            </div>
-
-                            <a href="/berita" class="btn group flex items-center gap-2 bg-white text-secondary
-										border border-white shadow-sm hover:shadow-md transition-all
-										px-5 sm:px-7 py-3 rounded-full">
-                                <span class="font-semibold text-sm sm:text-base">
-                                    Berita Lainnya
-                                </span>
-                                <span class="flex items-center justify-center size-10 rounded-full
-											bg-primary group-hover:scale-110 transition-transform">
-                                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-                                        <path d="M4.16663 10H15.8333" stroke="var(--secondary)" stroke-width="1.25"
-                                            stroke-linecap="round" />
-                                        <path d="M10 4.16666L15.8333 10L10 15.8333" stroke="var(--secondary)"
-                                            stroke-width="1.25" stroke-linecap="round" />
-                                    </svg>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Swiper -->
-					<div class="container-fluid sm:mt-12.5 mt-8 sm:!mx-5 px-2 sm:px-4 lg:px-5">
-						<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
-							@foreach ($posts->take(5) as $p)
-							<div class="group bg-white rounded-2xl overflow-hidden shadow-md
-										transition hover:shadow-lg
-										flex flex-row md:flex-col
-										h-auto md:h-full">
-
-								<!-- THUMBNAIL -->
-								<a href="{{ route('news.show', $p->slug) }}"
-									class="block w-28 min-w-[7rem] h-full md:w-full md:h-48 overflow-hidden">
-
-									<img src="{{ asset('storage/' . $p->thumbnail) }}" alt="{{ $p->title }}"
-										class="w-full h-full object-cover
-											md:group-hover:scale-105 transition-transform duration-500">
-								</a>
-
-								<!-- CONTENT -->
-								<div class="flex flex-col justify-between
-											p-3 sm:p-4
-											w-full">
-
-									<!-- CATEGORY -->
-									<span class="inline-block mb-1 w-fit
-												text-xs font-semibold
-												bg-primary text-secondary
-												px-2.5 py-1 rounded-full">
-										{{ $p->category->name }}
-									</span>
-
-									<!-- TITLE -->
-									<h4 class="text-secondary font-semibold
-												text-sm sm:text-base
-												leading-snug
-												line-clamp-2
-												mb-2">
-										<a href="{{ route('news.show', $p->slug) }}">
-											{{ $p->title }}
-										</a>
-									</h4>
-									<!-- DESCRIPTION -->
-									<p class="text-gray-600 text-xs mb-2 line-clamp-2">
-										{{ Str::limit(strip_tags($profil->content), 100) }}
-									</p>
-									<!-- DATE -->
-									<span class="text-xs text-gray-500">
-										{{ $p->published_at->format('d M Y') }}
-									</span>
-								</div>
+            <section class="relative my-6 overflow-hidden rounded-2xl bg-cover bg-center 2xl:mx-10 sm:mx-4 mx-2 xl:min-h-[600px] max-sm:min-h-[520px]">
+                <div class="relative z-1 xl:py-20 sm:py-16 py-12">
+					<!-- Header -->
+					<div class="px-4 sm:px-6 lg:px-8">
+						<div class="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 justify-between items-start sm:items-center mb-6 sm:mb-8 lg:mb-10">
+							<div class="max-w-3xl w-full sm:w-auto">
+								<h2 class="font-semibold text-secondary dark:text-white text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[55px] leading-tight sm:leading-tight lg:leading-tight mb-2 sm:mb-3">
+									Berita dan Artikel
+								</h2>
 							</div>
-							@endforeach
+							<a href="/berita" class="btn group inline-flex items-center gap-2 bg-white text-secondary border border-white shadow-sm hover:shadow-md transition-all px-4 sm:px-5 lg:px-7 py-2.5 sm:py-3 rounded-full w-full sm:w-auto justify-center sm:justify-start">
+								<span class="font-semibold text-xs sm:text-sm lg:text-base">
+									Berita Lainnya
+								</span>
+								<span class="flex items-center justify-center size-8 sm:size-9 lg:size-10 rounded-full bg-primary group-hover:scale-110 transition-transform">
+									<svg width="14" height="14" class="sm:w-4 sm:h-4 lg:w-5 lg:h-5" viewBox="0 0 20 20" fill="none">
+										<path d="M4.16663 10H15.8333" stroke="var(--secondary)" stroke-width="1.25" stroke-linecap="round"></path>
+										<path d="M10 4.16666L15.8333 10L10 15.8333" stroke="var(--secondary)" stroke-width="1.25" stroke-linecap="round"></path>
+									</svg>
+								</span>
+							</a>
 						</div>
 					</div>
+                    <!-- Swiper -->
+                    <div class="container-fluid sm:mt-12.5 mt-8 sm:!mx-5 px-2 sm:px-4 lg:px-5">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
+                            @foreach ($posts->take(5) as $p)
+                            <div class="group bg-white rounded-2xl overflow-hidden shadow-md transition hover:shadow-lg flex flex-row md:flex-col h-auto md:h-full">
+                                <!-- THUMBNAIL -->
+                                <a href="{{ route('news.show', $p->slug) }}" class="block w-28 min-w-[7rem] h-full md:w-full md:h-48 overflow-hidden">
+                                    <img src="{{ asset('storage/' . $p->thumbnail) }}" alt="{{ $p->title }}" class="w-full h-full object-cover md:group-hover:scale-105 transition-transform duration-500">
+                                </a>
+                                <!-- CONTENT -->
+                                <div class="flex flex-col justify-between p-3 sm:p-4 w-full">
+                                    <!-- CATEGORY -->
+                                    <span class="inline-block mb-1 w-fit text-xs font-semibold bg-primary text-secondary px-2.5 py-1 rounded-full">
+                                        {{ $p->category->name }}
+                                    </span>
+                                    <!-- TITLE -->
+                                    <h4 class="text-secondary font-semibold text-sm sm:text-base leading-snug line-clamp-2 mb-2">
+                                        <a href="{{ route('news.show', $p->slug) }}">
+                                            {{ $p->title }}
+                                        </a>
+                                    </h4>
+                                    <!-- DESCRIPTION -->
+                                    <p class="text-gray-600 text-xs mb-2 line-clamp-2">
+                                        {{ Str::limit(strip_tags($p->content), 100) }}
+                                    </p>
+                                    <!-- DATE -->
+                                    <span class="text-xs text-gray-500">
+                                        {{ $p->published_at->format('d M Y') }}
+                                    </span>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
     </div>
 </div>
 @endsection
+
 @push('styles')
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Vendor CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/vendor/css/owl.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendor/css/magnific.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendor/css/nice-select.min.css') }}">
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Responsive adjustments -->
-    <style>	
-        @media (max-width: 640px) {
-            .main-banner {
-                margin-left: 0.5rem;
-                margin-right: 0.5rem;
-            }
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Vendor CSS -->
+<link rel="stylesheet" href="{{ asset('assets/vendor/css/owl.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/vendor/css/magnific.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/vendor/css/nice-select.min.css') }}">
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Responsive adjustments -->
+<style>
+    @media (max-width: 640px) {
+        .main-banner {
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
         }
-        
-        @media (max-width: 768px) {
-            .main-banner h1 {
-                font-size: 1.75rem;
-                line-height: 2.25rem;
-            }
-            
-            .services-details .swiper-slide {
-                width: 75%;
-            }
+        .stats-section {
+            flex-direction: column;
         }
-        
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .services-details .swiper-slide {
-                width: 50%;
-            }
+        .news-grid {
+            grid-template-columns: 1fr !important;
         }
-        
-        @media (min-width: 1025px) {
-            .services-details .swiper-slide {
-                width: 33.333%;
-            }
+        .text-3xl {
+            font-size: 1.875rem !important;
+            line-height: 2.25rem !important;
         }
-        
-        /* Ensure proper container spacing */
+    }
+    
+    @media (max-width: 768px) {
+        .main-banner h1 {
+            font-size: 2rem !important;
+            line-height: 2.5rem !important;
+        }
+        .news-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .container-fluid {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }
+    }
+    
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .news-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .xl\:col-span-8 {
+            grid-column: span 12 / span 12;
+        }
+        .xl\:col-span-4 {
+            grid-column: span 12 / span 12;
+            margin-bottom: 2rem;
+        }
+    }
+    
+    @media (min-width: 1025px) and (max-width: 1280px) {
+        .news-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+    
+    @media (min-width: 1281px) {
+        .news-grid {
+            grid-template-columns: repeat(5, 1fr);
+        }
+    }
+    
+    /* Mobile optimization for cards */
+    @media (max-width: 768px) {
+        .flex-row {
+            width: 100%;
+        }
+        .w-28 {
+            width: 100px !important;
+            min-width: 100px !important;
+        }
+        .line-clamp-2 {
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+        }
+        .p-3 {
+            padding: 0.75rem !important;
+        }
+    }
+    
+    /* Tablet optimization */
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .md\:h-48 {
+            height: 12rem !important;
+        }
+        .gap-4 {
+            gap: 0.75rem !important;
+        }
+    }
+    
+    /* Ensure proper container spacing */
+    .container, .container-fluid {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    @media (min-width: 640px) {
         .container, .container-fluid {
-            padding-left: 1rem;
-            padding-right: 1rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
         }
-        
-        @media (min-width: 640px) {
-            .container, .container-fluid {
-                padding-left: 1.5rem;
-                padding-right: 1.5rem;
-            }
+    }
+    
+    @media (min-width: 768px) {
+        .container, .container-fluid {
+            padding-left: 2rem;
+            padding-right: 2rem;
         }
-        
-        @media (min-width: 768px) {
-            .container, .container-fluid {
-                padding-left: 2rem;
-                padding-right: 2rem;
-            }
+    }
+    
+    @media (min-width: 1024px) {
+        .container, .container-fluid {
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
         }
-    </style>
+    }
+    
+    /* Fix for small screens */
+    @media (max-width: 480px) {
+        .text-sm {
+            font-size: 0.75rem !important;
+        }
+        .text-xs {
+            font-size: 0.65rem !important;
+        }
+        .min-w-\[7rem\] {
+            min-width: 5rem !important;
+        }
+        .w-28 {
+            width: 80px !important;
+        }
+        .p-3 {
+            padding: 0.5rem !important;
+        }
+    }
+</style>
 @endpush
 
 @push('scripts')
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery-migrate-3.4.1.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Vendor JS -->
-    <script src="{{ asset('assets/vendor/js/layout.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/js/magnific.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/js/nice-select.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/js/owl.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/js/counter-up.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/js/waypoint.min.js') }}"></script>
-    <!-- WOW.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script>
-        new WOW().init();
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.4.1.min.js"></script>
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Vendor JS -->
+<script src="{{ asset('assets/vendor/js/layout.min.js') }}"></script>
+<script src="{{ asset('assets/vendor/js/magnific.min.js') }}"></script>
+<script src="{{ asset('assets/vendor/js/nice-select.min.js') }}"></script>
+<script src="{{ asset('assets/vendor/js/owl.min.js') }}"></script>
+<script src="{{ asset('assets/vendor/js/counter-up.min.js') }}"></script>
+<script src="{{ asset('assets/vendor/js/waypoint.min.js') }}"></script>
+<!-- WOW.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+    new WOW().init();
+    
+    // Initialize swiper for responsive news slider
+    $(document).ready(function() {
+        if ($('.services-details').length) {
+            var newsSwiper = new Swiper('.services-details', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                breakpoints: {
+                    640: { slidesPerView: 1.2 },
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 },
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+        }
         
-        // Initialize swiper for responsive news slider
-        $(document).ready(function() {
-            if ($('.services-details').length) {
-                var newsSwiper = new Swiper('.services-details', {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                    loop: true,
-					breakpoints: {
-						640: { slidesPerView: 1.2 },
-						768: { slidesPerView: 2 },
-						1024: { slidesPerView: 3 },
-					},
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                    },
+        // Handle mobile menu and responsive behaviors
+        function handleResponsive() {
+            const width = window.innerWidth;
+            
+            // Adjust card layout for mobile
+            if (width < 768) {
+                $('.flex-row').each(function() {
+                    if (!$(this).hasClass('flex-col')) {
+                        $(this).addClass('flex-col-mobile');
+                    }
                 });
             }
+        }
+        
+        // Initial call
+        handleResponsive();
+        
+        // On resize
+        $(window).resize(function() {
+            handleResponsive();
         });
-    </script>
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    });
+</script>
+<!-- Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 @endpush
-
 					<!-- <section class="main-banner relative bg-bglight xl:h-187.5 overflow-hidden before:bg-[url('../images/background/bg2.png')] before:size-full before:z-1 before:bg-center before:bg-no-repeat before:bg-cover before:absolute bg-no-repeat bg-cover 2xl:mx-10 mx-3.5 rounded-2xl">
 						<img class="size-full object-cover absolute scale-130 -mt-30" src="assets/images/background/bg1.png" alt="img" data-speed=".5">
 						<div class="container xl:py-32.5 py-10 relative z-1">

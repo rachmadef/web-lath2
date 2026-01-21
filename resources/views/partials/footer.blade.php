@@ -6,7 +6,7 @@
             <div class="lg:col-span-4">
                 <div class="mb-8">
                     <div class="mb-5">
-                        <h3 class="sm:text-2xl md:text-3xl lg:text-4xl font-bold text-secondary leading-tight">
+                        <h3 class="text-3xl font-bold text-secondary leading-tight">
                             PP. Al Wahabiyyah 1<br>& Al Lathifiyyah 2
                         </h3>
                         <p class="text-lg text-primary font-medium mt-2">
