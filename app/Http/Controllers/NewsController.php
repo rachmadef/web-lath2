@@ -18,12 +18,15 @@ class NewsController extends Controller
 
     public function show(string $slug)
     {
-        $post = Post::with(['author', 'category'])
+        $post = Post::with([
+                'author',
+                'category',
+                'gallery', // ⬅️ ambil galeri
+            ])
             ->where('slug', $slug)
             ->where('status', 'published')
             ->firstOrFail();
 
-        // Get related posts for sidebar
         $relatedPosts = Post::with(['author', 'category'])
             ->where('category_id', $post->category_id)
             ->where('id', '!=', $post->id)
@@ -34,4 +37,5 @@ class NewsController extends Controller
 
         return view('news.show', compact('post', 'relatedPosts'));
     }
+
 }

@@ -9,7 +9,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/galeri', [GalleryController::class, 'index'])->name('gallery.index');
+Route::get('/gallery', [GalleryController::class, 'index'])
+    ->name('gallery.index');
+
+Route::get('/gallery/{gallery}', [GalleryController::class, 'show'])
+    ->name('gallery.show');
 Route::get('/daftar', [RegistrationController::class, 'index'])->name('daftar');
 
 Route::get('/profil', [ProfilController::class, 'show'])
@@ -25,4 +29,3 @@ Route::get('/{category:slug}', [NewsController::class, 'index'])
 
 Route::get('/berita/{slug}', [NewsController::class, 'show'])
     ->name('news.show');
-

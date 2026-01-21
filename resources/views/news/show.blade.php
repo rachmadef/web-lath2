@@ -85,6 +85,31 @@
                                 {!! $post->content !!}
                             </div>
                         </article>
+                        {{-- GALERI TERKAIT BERITA --}}
+                        @if($post->gallery && is_array($post->gallery->images))
+                        <section class="mt-12 mb-6">
+                            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                                Dokumentasi Kegiatan
+                            </h2>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                @foreach(collect($post->gallery->images)->take(10) as $image)
+                                    <a href="{{ asset('storage/'.$image) }}"
+                                    target="_blank"
+                                    class="group block overflow-hidden rounded-xl shadow-lg">
+
+                                        <img
+                                            src="{{ asset('storage/'.$image) }}"
+                                            alt="{{ $post->title }}"
+                                            class="w-full h-64 object-cover
+                                                transition duration-500
+                                                group-hover:scale-105"
+                                        >
+                                    </a>
+                                @endforeach
+                            </div>
+                        </section>
+                        @endif
 
                         <!-- Tags Section -->
                         <div class="mb-12 pt-8 border-t border-emerald-900 dark:border-emerald-800">

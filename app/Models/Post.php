@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Models;
+use App\Models\Gallery;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-
+use Illuminate\Database\Eloquent\Relations\HasOne;
 class Post extends Model
 {
     protected $fillable = [
@@ -30,5 +31,9 @@ class Post extends Model
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+    public function gallery(): HasOne
+    {
+        return $this->hasOne(Gallery::class);
     }
 }

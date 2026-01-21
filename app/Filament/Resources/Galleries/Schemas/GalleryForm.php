@@ -2,7 +2,13 @@
 
 namespace App\Filament\Resources\Galleries\Schemas;
 
-use Filament\Forms;
+use App\Models\GalleryCategory;
+use App\Models\Post;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
 class GalleryForm
@@ -10,25 +16,45 @@ class GalleryForm
     public static function configure(Schema $schema): Schema
     {
         return $schema->schema([
-            Forms\Components\TextInput::make('title')
-                ->label('Judul Galeri')
+
+            TextInput::make('title')
+                ->label('Judul Kegiatan')
                 ->required()
                 ->maxLength(255),
 
-            Forms\Components\Textarea::make('description')
-                ->label('Deskripsi')
-                ->rows(3),
+            Select::make('gallery_category_id')
+                ->label('Kategori Galeri')
+                ->relationship('category', 'name')
+                ->searchable()
+                ->preload()
+                ->required(),
 
-            Forms\Components\FileUpload::make('images')
-                ->label('Foto Galeri')
+            Select::make('post_id')
+                ->label('Terkait Berita (Opsional)')
+                ->relationship('post', 'title')
+                ->searchable()
+                ->nullable(),
+
+            DatePicker::make('event_date')
+                ->label('Tanggal Kegiatan')
+                ->required(),
+
+            Textarea::make('description')
+                ->label('Deskripsi Singkat')
+                ->rows(4)
+                ->nullable(),
+
+            FileUpload::make('images')
+                ->label('Foto Dokumentasi')
                 ->multiple()
                 ->image()
                 ->disk('public')
-                ->directory('public/galleries')
-                ->visibility('public')
-                ->required()
+                ->maxFiles(10)
+                ->directory('galleries')
                 ->reorderable()
-                ->required(),
+                ->required()
+                ->helperText('Maksimal 10 foto. Foto pertama akan menjadi cover.'),
+
         ]);
     }
 }

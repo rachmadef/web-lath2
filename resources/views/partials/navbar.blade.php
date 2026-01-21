@@ -77,7 +77,7 @@
                     <!-- Theme Toggle Button -->
                     <button type="button" class="theme-toggle-btn size-8 sm:size-10 lg:size-12 inline-flex items-center justify-center rounded-2lg border-2 dark:border-white border-secondary hover:bg-primary hover:border-primary transition-colors duration-300 cursor-pointer group">
                         <span class="dark:block hidden">
-                            <svg width="18" height="18" class="sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white group-hover:stroke-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="18" height="18" class="sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white group-hover:text-secondary group-hover:stroke-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M12 2V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M12 20V22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -119,7 +119,7 @@
                     <button type="button" class="mobile-menu-btn relative xl:hidden flex items-center justify-center size-8 sm:size-10 lg:size-12 focus:outline-none group">
                         <span class="inline-block align-middle space-y-1.5 sm:space-y-2 lg:space-y-2.5">
                             <span class="bg-secondary dark:bg-white block h-0.5 w-5 sm:w-6 lg:w-7 duration-300 group-[.open]:rotate-45 group-[.open]:translate-y-2 sm:group-[.open]:translate-y-2.5 lg:group-[.open]:translate-y-3"></span>
-                            <span class="bg-secondary dark:bg-white block h-0.5 w-5 sm:w-6 lg:w-7 duration-300 group-[.open]:opacity-0"></span>
+                            <span class="bg-secondary dark:bg-white block h-0.5 w-3 sm:w-6 lg:w-7 duration-300 group-[.open]:opacity-0"></span>
                             <span class="bg-secondary dark:bg-white block h-0.5 w-5 sm:w-6 lg:w-7 duration-300 group-[.open]:-rotate-45 group-[.open]:-translate-y-2 sm:group-[.open]:-translate-y-2.5 lg:group-[.open]:-translate-y-3"></span>
                         </span>
                     </button>
