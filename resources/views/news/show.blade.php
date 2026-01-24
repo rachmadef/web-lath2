@@ -1,7 +1,21 @@
 @extends('layouts.app')
 
 @section('title', $post->title . ' | Berita')
+{{-- ================= SEO & SOCIAL SHARE ================= --}}
+@section('og_title', $post->title)
 
+@section('og_description', 
+    Str::limit(
+        trim(strip_tags($post->content)), 
+        150
+    )
+)
+
+@section('og_image', 
+    $post->thumbnail 
+        ? asset('storage/'.$post->thumbnail) 
+        : asset('images/logo.jpg')
+)
 @section('content')
 <div id="smooth-wrapper">
     <div id="smooth-content">

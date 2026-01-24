@@ -17,7 +17,7 @@ class GalleryCategoryResource extends Resource
 
     protected static ?string $navigationLabel = 'Kategori Galeri';
 
-    protected static ?int $navigationSort = 1;
+    protected static ?int $navigationSort = 2;
 
     protected static ?string $recordTitleAttribute = 'name';
 
@@ -28,7 +28,7 @@ class GalleryCategoryResource extends Resource
 
     public static function getNavigationIcon(): string
     {
-        return 'heroicon-o-folder';
+        return 'heroicon-o-folder-open';
     }
 
     public static function form(Schema $schema): Schema

@@ -13,7 +13,12 @@ class RegistrationContentsTable
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('key')->badge(),
+                TextColumn::make('title')->searchable(),
+                ImageColumn::make('image')
+                    ->label('Gambar')
+                    ->disk('public')
+                    ->circular(),
             ])
             ->filters([
                 //

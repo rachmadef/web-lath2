@@ -20,15 +20,19 @@ class GalleryResource extends Resource
 
     protected static ?string $navigationLabel = 'Galeri';
 
-    protected static ?int $navigationSort = 3;
+    protected static ?int $navigationSort = 2;
 
-    protected static string|BackedEnum|null $navigationIcon =
-        Heroicon::OutlinedRectangleStack;
-
-    /**
-     * Judul record (breadcrumb, modal, dll)
-     */
     protected static ?string $recordTitleAttribute = 'title';
+
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Galeri';
+    }
+
+    public static function getNavigationIcon(): string
+    {
+        return 'heroicon-o-photo';
+    }
 
     public static function table(Table $table): Table
     {

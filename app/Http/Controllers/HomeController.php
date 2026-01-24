@@ -19,7 +19,7 @@ class HomeController extends Controller
             $profil = Post::with('category')
                 ->where('status', 'published')
                 ->where('category_id', $categoryProfil->id)
-                ->first();
+                ->get();
         }
 
         // Ambil data sejarah jika kategori ditemukan
@@ -28,7 +28,7 @@ class HomeController extends Controller
             $sejarah = Post::with('category')
                 ->where('status', 'published')
                 ->where('category_id', $categorySejarah->id)
-                ->first();
+                ->get();
         }
 
         // Kategori berita (asumsi category_id 1 atau sesuaikan)

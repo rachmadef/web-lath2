@@ -15,18 +15,18 @@
 <meta name="robots" content="index, follow">
 <meta name="format-detection" content="telephone=no">
  
-<!-- Open Graph / Facebook -->
+<!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Plexify - Business Consultant & Agency Tailwind CSS Template | DexignZone">
-<meta property="og:description" content="Plexify is a modern Business Consultant & Agency Tailwind CSS template for consulting firms and agencies. Responsive, customizable, and conversion-focused.">
-{{-- <meta property="og:image" content="https://plexify.dexignzone.com/tailwind/social-image.png"> --}}
-{{-- <meta property="og:url" content="https://plexify.dexignzone.com/tailwind/"> --}}
- 
-<!-- Twitter -->
+<meta property="og:title" content="@yield('og_title', 'Portal Berita')">
+<meta property="og:description" content="@yield('og_description', 'Berita terbaru dan informasi terkini')">
+<meta property="og:image" content="@yield('og_image', asset('images/logo.jpg'))">
+<meta property="og:url" content="{{ url()->current() }}">
+
+<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Plexify - Business Consultant & Agency Tailwind CSS Template | DexignZone">
-<meta name="twitter:description" content="Plexify is a modern Business Consultant & Agency Tailwind CSS template for consulting firms and agencies. Responsive, customizable, and conversion-focused.">
-{{-- <meta name="twitter:image" content="https://plexify.dexignzone.com/tailwind/social-image.png"> --}}
+<meta name="twitter:title" content="@yield('og_title', 'Portal Berita')">
+<meta name="twitter:description" content="@yield('og_description', 'Berita terbaru dan informasi terkini')">
+<meta name="twitter:image" content="@yield('og_image', asset('images/logo.jpg'))">
 
 <!-- MOBILE SPECIFIC -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -97,7 +97,6 @@
     <script src="{{ asset('assets/vendor/gsap/ScrollTrigger.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/gsap/MotionPathPlugin.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/gsap/ScrollSmoother.js') }}"></script>
-    <script src="{{ asset('assets/vendor/SplitText/SplitText.js') }}"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <script src="{{ asset('assets/vendor/wow/wow.js') }}"></script>
     <script src="{{ asset('assets/vendor/apexchart/apexcharts.js') }}"></script>

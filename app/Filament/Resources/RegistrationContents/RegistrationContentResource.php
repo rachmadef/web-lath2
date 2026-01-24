@@ -12,6 +12,7 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Schemas\Schema;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\FileUpload;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 
@@ -19,25 +20,46 @@ class RegistrationContentResource extends Resource
 {
     protected static ?string $model = RegistrationContent::class;
 
-    protected static ?string $navigationLabel = 'Konten Pendaftaran';
+    protected static ?string $navigationLabel = 'Pendaftaran';
 
-    protected static BackedEnum|string|null $navigationIcon =
-        Heroicon::OutlinedDocumentText;
+    protected static ?int $navigationSort = 1;
 
+    protected static ?string $recordTitleAttribute = 'name';
+
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Pendaftaran';
+    }
+
+    public static function getNavigationIcon(): string
+    {
+        return 'heroicon-o-clipboard';
+    }
     /* ================= FORM (Filament v4) ================= */
     public static function form(Schema $schema): Schema
     {
         return $schema->components([
+
             TextInput::make('key')
+                ->label('Key')
                 ->required()
-                ->disabled(),
+                ->unique(ignoreRecord: true)
+                ->helperText('Contoh: persyaratan, biaya, jadwal'),
 
             TextInput::make('title')
                 ->required(),
 
+            FileUpload::make('image')
+                ->label('Gambar (Opsional)')
+                ->image()
+                ->disk('public')
+                ->directory('registration')
+                ->visibility('public')
+                ->imageEditor()
+                ->columnSpanFull(),
+
             RichEditor::make('content')
-                ->label('Konten')
-                ->required()
+                ->label('Konten (Opsional)')
                 ->columnSpanFull()
                 ->toolbarButtons([
                     'bold',
@@ -50,7 +72,7 @@ class RegistrationContentResource extends Resource
                     'undo',
                     'redo',
                 ])
-                ->helperText('Gunakan tombol daftar (numbered/bulleted list) untuk membuat poin atau penomoran.'),
+                ->helperText('Boleh dikosongkan jika hanya menggunakan gambar.'),
 
         ]);
     }

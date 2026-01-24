@@ -7,17 +7,15 @@
     <div id="smooth-content">
         <div class="page-content py-10 sm:pt-10">
             <!-- Main Banner Section -->
-            <section class="main-banner my-4 relative xl:h-screen xl:min-h-237.5 xl:max-h-237.5 overflow-hidden before:bg-[url('../images/background/bg2.png')] before:size-full before:z-1 before:bg-center before:bg-no-repeat before:bg-cover before:absolute bg-no-repeat bg-cover 2xl:mx-10 sm:mx-3.5 mx-2 rounded-2xl max-sm:min-h-[500px]">
+            <section class="main-banner my-4 relative xl:h-auto xl:min-h-dvh xl:max-h-237.5 overflow-hidden before:bg-[url('../images/background/bg2.png')] before:size-full before:z-1 before:bg-center before:bg-no-repeat before:bg-cover before:absolute bg-no-repeat bg-cover 2xl:mx-10 sm:mx-3.5 mx-2 rounded-2xl max-sm:min-h-[500px]">
                 <img class="size-full object-cover absolute" src="images/bg.jpeg" alt="img" data-speed=".20">
                 <div class="container relative z-1 px-4 sm:px-6 lg:px-8">
-                    <div class="grid grid-cols-12 gap-5 items-start sm:pt-32.5 pt-20">
+                    <div class="grid grid-cols-12 gap-5 items-start sm:pt-12 pt-12">
                         <!-- Left Column -->
                         <div class="xl:col-span-6 col-span-12 max-3xl:pl-20 pt-10 max-lg:pl-10 max-md:pl-0">
                             <!-- Logo Section -->
                             <div class="flex gap-4 sm:gap-3 lg:gap-4 mb-4 sm:mb-6 lg:mb-8 xl:justify-start justify-center">
-                                <img src="{{ asset('images/logo.jpg') }}" alt="logo-light" class="rounded-full object-cover" style="width: 60px;">
-                                <img src="{{ asset('images/logo.jpg') }}" alt="logo-light" class="rounded-full object-cover" style="width: 60px;">
-                                <img src="{{ asset('images/logo.jpg') }}" alt="logo-light" class="rounded-full object-cover" style="width: 60px;">
+                                <img src="{{ asset('images/top.png') }}" alt="logo-light" class="object-cover h-16 sm:h-12">
                             </div>
                             <div class="3xl:pt-32 xl:pt-24 lg:pt-20 md:pt-16 sm:pt-12 pt-8 text-center">
                                 <div class="mb-8 sm:mb-12 md:mb-16">
@@ -59,7 +57,7 @@
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide !opacity-0 [.swiper-slide.swiper-slide-active]:!opacity-100">
                                             <div class="flex justify-center">
-                                                <img src="images/ibuk.png" alt="img" class="wow bounceInUp object-cover w-full max-w-md">
+                                                <img src="images/foto.png" alt="img" class="wow bounceInUp object-cover w-full max-w-md">
                                             </div>
                                         </div>
                                     </div>
@@ -89,8 +87,8 @@
                             <div class="swiper slide-transited !overflow-visible">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide !opacity-0 [.swiper-slide.swiper-slide-active]:!opacity-100">
-                                        <div class="xl:w-[50vw] relative xl:right-25 right-0 flex justify-end">
-                                            <img src="images/ibuk.png" alt="img" class="wow bounceInUp object-cover max-lg:w-[90%] max-xl:w-[80%]">
+                                        <div class="xl:w-[50vw] relative xl:right-12 pr-12 right-0 flex justify-end">
+                                            <img src="images/foto.png" alt="img" class="wow bounceInUp object-cover max-lg:w-[90%] max-xl:w-[80%]">
                                         </div>
                                     </div>
                                 </div>
@@ -136,7 +134,7 @@
                             <div class="overflow-hidden size-full relative">
                                 <div class="group dz-hover-item relative size-full">
                                     <a class="dz-hover-img rounded-2lg relative size-full" data-displacement="assets/images/1.avif" data-intensity="0.6" data-speedin="1" data-speedout="1">
-                                        <img class="rounded-xxl size-full object-cover transform transition-transform duration-1000 group-hover:scale-110" src="images/model1.jpeg" alt="img">
+                                        <img class="rounded-xxl size-full object-cover transform transition-transform duration-1000 group-hover:scale-110" src="images/santri.png" alt="img">
                                     </a>
                                 </div>
                             </div>
@@ -232,114 +230,117 @@
                     </div>
                 </div>
             </section>
-            
-            <section class="main-banner relative bg-bglight overflow-hidden before:bg-[url('../images/background/bg2.png')] before:size-full before:z-1 before:bg-center before:bg-no-repeat before:bg-cover before:absolute bg-no-repeat bg-cover 2xl:mx-10 mx-3.5 rounded-2xl">
-                <img class="size-full object-cover absolute scale-130" src="images/bg.jpeg" alt="img" data-speed=".5">
-                <div class="px-6 xl:py-24 py-12 relative z-1">
-                    <div class="grid grid-cols-12 gap-5 items-center">
-                        <div class="xl:col-span-4 col-span-12 pl-4 xl:pt-12.5">
-                            <h1 class="2xl:text-5xl lg:text-4xxl sm:text-4xl text-3xl font-semibold headline xl:mt-5 text-white">
-                                Tentang Pondok Kami
-                            </h1>
-                            <p class="sm:text-xl text-lg text-primary">
-                                Mengenal Lebih Dekat Visi, Misi, dan Perjalanan Kami
-                            </p>
-                        </div>
-                        <div class="xl:col-span-8 col-span-12">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <!-- Card Profil Pondok -->
-                                @if($profil)
-                                <div class="group bg-white rounded-2xl overflow-hidden shadow-md transition hover:shadow-lg flex flex-row md:flex-col h-auto md:h-full">
-                                    <!-- THUMBNAIL -->
-                                    <a href="{{ route('profil') }}" class="block w-28 min-w-[7rem] h-full md:w-full md:h-48 overflow-hidden">
-                                        @if($profil->thumbnail)
-                                        <img src="{{ asset('storage/' . $profil->thumbnail) }}" alt="{{ $profil->title }}" class="w-full h-full object-cover md:group-hover:scale-105 transition-transform duration-500">
-                                        @else
-                                        <div class="w-full h-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
-                                            <svg class="size-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                                            </svg>
-                                        </div>
-                                        @endif
-                                    </a>
-                                    <!-- CONTENT -->
-                                    <div class="flex flex-col justify-between p-3 sm:p-4 w-full">
-                                        <!-- TITLE -->
-                                        <h4 class="text-secondary font-semibold text-sm sm:text-base leading-snug line-clamp-2 mb-2">
-                                            <a href="{{ route('profil') }}">
-                                                {{ $profil->title }}
-                                            </a>
-                                        </h4>
-                                        <!-- DESCRIPTION -->
-                                        <p class="text-gray-600 text-xs mb-2 line-clamp-2">
-                                            {{ Str::limit(strip_tags($profil->content), 100) }}
-                                        </p>
-                                        <!-- DATE (jika ada) -->
-                                        @if($profil->published_at)
-                                        <span class="text-xs text-gray-500">
-                                            {{ $profil->published_at->format('d M Y') }}
-                                        </span>
-                                        @elseif($profil->created_at)
-                                        <span class="text-xs text-gray-500">
-                                            {{ $profil->created_at->format('d M Y') }}
-                                        </span>
-                                        @endif
-                                    </div>
-                                </div>
-                                @endif
-                                <!-- Card Sejarah Pondok -->
-                                @if($sejarah)
-                                <div class="group bg-white rounded-2xl overflow-hidden shadow-md transition hover:shadow-lg flex flex-row md:flex-col h-auto md:h-full">
-                                    <!-- THUMBNAIL -->
-                                    <a href="{{ route('sejarah') }}" class="block w-28 min-w-[7rem] h-full md:w-full md:h-48 overflow-hidden">
-                                        @if($sejarah->thumbnail)
-                                        <img src="{{ asset('storage/' . $sejarah->thumbnail) }}" alt="{{ $sejarah->title }}" class="w-full h-full object-cover md:group-hover:scale-105 transition-transform duration-500">
-                                        @else
-                                        <div class="w-full h-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
-                                            <svg class="size-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                            </svg>
-                                        </div>
-                                        @endif
-                                    </a>
-                                    <!-- CONTENT -->
-                                    <div class="flex flex-col justify-between p-3 sm:p-4 w-full">
-                                        <!-- TITLE -->
-                                        <h4 class="text-secondary font-semibold text-sm sm:text-base leading-snug line-clamp-2 mb-2">
-                                            <a href="{{ route('sejarah') }}">
-                                                {{ $sejarah->title }}
-                                            </a>
-                                        </h4>
-                                        <!-- DESCRIPTION -->
-                                        <p class="text-gray-600 text-xs mb-2 line-clamp-2">
-                                            {{ Str::limit(strip_tags($sejarah->content), 100) }}
-                                        </p>
-                                        <!-- DATE (jika ada) -->
-                                        @if($sejarah->published_at)
-                                        <span class="text-xs text-gray-500">
-                                            {{ $sejarah->published_at->format('d M Y') }}
-                                        </span>
-                                        @elseif($sejarah->created_at)
-                                        <span class="text-xs text-gray-500">
-                                            {{ $sejarah->created_at->format('d M Y') }}
-                                        </span>
-                                        @endif
-                                    </div>
-                                </div>
-                                @endif
-                                <!-- Jika data tidak ditemukan, tampilkan placeholder -->
-                                @if(!$profil && !$sejarah)
-                                <div class="col-span-2">
-                                    <div class="bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl p-8 text-center">
-                                        <p class="text-gray-600">Data belum tersedia</p>
-                                    </div>
-                                </div>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+						
+			<section class="main-banner relative bg-bglight overflow-hidden before:bg-[url('../images/background/bg2.png')] before:size-full before:z-1 before:bg-center before:bg-no-repeat before:bg-cover before:absolute bg-no-repeat bg-cover 2xl:mx-10 mx-3.5 rounded-2xl">
+				<img class="size-full object-cover absolute scale-130" src="images/bg.jpeg" alt="img" data-speed=".5">
+				<div class="px-4 sm:px-6 xl:py-24 py-12 relative z-1">
+					<div class="flex flex-col gap-5 items-center">
+						<div class="w-full max-w-6xl mb-6 md:mb-8">
+							<h1 class="2xl:text-5xl xl:text-4xl lg:text-4xxl md:text-4xl sm:text-3xl text-2xl font-semibold headline xl:mt-5 text-white text-center">
+								Tentang Pondok Kami
+							</h1>
+							<p class="md:text-xl sm:text-lg text-base text-primary text-center mt-2">
+								Mengenal Lebih Dekat Visi, Misi, dan Perjalanan Kami
+							</p>
+						</div>
+						
+						<div class="space-y-6 md:space-y-8 w-full max-w-6xl">
+							{{-- ================= PROFIL ================= --}}
+							@if($profil->count())
+							<div>
+								<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+									@foreach($profil as $item)
+									<a href="{{ route('profil.show', ['section' => 'profil', 'slug' => $item->slug]) }}"
+									class="group bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden flex-shrink-0 w-full sm:w-auto sm:min-w-[300px] md:min-w-[350px] lg:min-w-[400px] flex">
+										
+										{{-- IMAGE --}}
+										<div class="w-28 sm:w-32 md:w-36 h-auto overflow-hidden">
+											<img
+												src="{{ $item->thumbnail ? asset('storage/'.$item->thumbnail) : asset('images/default.jpg') }}"
+												alt="{{ $item->title }}"
+												class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+										</div>
+										
+										{{-- CONTENT --}}
+										<div class="p-3 sm:p-4 flex flex-col justify-between flex-1">
+											<div>
+												<span class="inline-block mb-1 text-xs px-2 py-0.5 rounded-full bg-blue-100 text-blue-700">
+													Profil
+												</span>
+												
+												<h4 class="font-semibold text-gray-800 leading-snug text-sm sm:text-base line-clamp-2">
+													{{ $item->title }}
+												</h4>
+												
+												<p class="text-xs sm:text-sm text-gray-600 mt-1 line-clamp-2">
+													{{ Str::limit(strip_tags($item->excerpt ?? $item->content), 80) }}
+												</p>
+											</div>
+											
+											<span class="text-xs text-gray-400 mt-2">
+												{{ $item->published_at?->translatedFormat('d M Y') }}
+											</span>
+										</div>
+									</a>
+									@endforeach
+								</div>
+							</div>
+							@endif
+							
+							{{-- ================= SEJARAH ================= --}}
+							@if($sejarah->count())
+							<div>
+								<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+									@foreach($sejarah as $item)
+									<a href="{{ route('profil.show', ['section' => 'sejarah', 'slug' => $item->slug]) }}"
+									class="group bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden flex-shrink-0 w-full sm:w-auto sm:min-w-[300px] md:min-w-[350px] lg:min-w-[400px] flex">
+										
+										{{-- IMAGE --}}
+										<div class="w-28 sm:w-32 md:w-36 h-auto overflow-hidden">
+											<img
+												src="{{ $item->thumbnail ? asset('storage/'.$item->thumbnail) : asset('images/default.jpg') }}"
+												alt="{{ $item->title }}"
+												class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+										</div>
+										
+										{{-- CONTENT --}}
+										<div class="p-3 sm:p-4 flex flex-col justify-between flex-1">
+											<div>
+												<span class="inline-block mb-1 text-xs px-2 py-0.5 rounded-full bg-green-100 text-green-700">
+													Sejarah
+												</span>
+												
+												<h4 class="font-semibold text-gray-800 leading-snug text-sm sm:text-base line-clamp-2">
+													{{ $item->title }}
+												</h4>
+												
+												<p class="text-xs sm:text-sm text-gray-600 mt-1 line-clamp-2">
+													{{ Str::limit(strip_tags($item->excerpt ?? $item->content), 80) }}
+												</p>
+											</div>
+											
+											<span class="text-xs text-gray-400 mt-2">
+												{{ $item->published_at?->translatedFormat('d M Y') }}
+											</span>
+										</div>
+									</a>
+									@endforeach
+								</div>
+							</div>
+							@endif
+							
+							{{-- ================= EMPTY STATE ================= --}}
+							@if($profil->isEmpty() && $sejarah->isEmpty())
+							<div class="bg-white/80 rounded-xl p-6 md:p-8 text-center">
+								<p class="text-gray-600 text-sm md:text-base">
+									Data profil dan sejarah belum tersedia
+								</p>
+							</div>
+							@endif
+						</div>
+					</div>
+				</div>
+			</section>
             
             <!-- News Section -->
             <section class="relative my-6 overflow-hidden rounded-2xl bg-cover bg-center 2xl:mx-10 sm:mx-4 mx-2 xl:min-h-[600px] max-sm:min-h-[520px]">

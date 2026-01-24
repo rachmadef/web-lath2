@@ -28,7 +28,7 @@
                 
                 <!-- Desktop Navigation Menu dengan Active States -->
                 <div class="header-nav navbar-collapse full-sidenav custom-scroll">
-                    <ul class="nav navbar xl:flex xl:w-auto w-full list-none">
+                    <ul class="nav navbar xl:flex xl:w-auto w-full list-none items-center">
                         <li>
                             <a href="{{ route('home') }}" class="text-sm sm:text-base lg:text-lg px-5 py-2.5 font-medium block relative after:content-[''] after:absolute after:h-0.5 after:w-0 after:bg-primary after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:duration-500 
                                 {{ request()->routeIs('home') 
@@ -42,7 +42,7 @@
                                 {{ request()->is('berita*') || request()->routeIs('news.*') 
                                     ? 'text-primary dark:text-primary-light after:w-3.75' 
                                     : 'text-gray-800 dark:text-gray-200 hover:text-primary dark:hover:text-primary-light xl:text-white hover:after:w-3.75' }}">
-                                Berita
+                                Al Akhbar
                             </a>
                         </li>
                         <li>
@@ -50,24 +50,77 @@
                                 {{ request()->routeIs('gallery.*') 
                                     ? 'text-primary dark:text-primary-light after:w-3.75' 
                                     : 'text-gray-800 dark:text-gray-200 hover:text-primary dark:hover:text-primary-light xl:text-white hover:after:w-3.75' }}">
-                                <span>Galeri</span>
+                                <span>Tashwir</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="{{ route('profil') }}" class="text-sm sm:text-base lg:text-lg px-5 py-2.5 font-medium block relative after:content-[''] after:absolute after:h-0.5 after:w-0 after:bg-primary after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:duration-500 
-                                {{ request()->routeIs('profil') 
-                                    ? 'text-primary dark:text-primary-light after:w-3.75' 
-                                    : 'text-gray-800 dark:text-gray-200 hover:text-primary dark:hover:text-primary-light xl:text-white hover:after:w-3.75' }}">
-                                Profil Pondok
-                            </a>
+                        
+                        <!-- PROFIL DROPDOWN -->
+                        <li class="relative group">
+                            <div class="flex items-center cursor-pointer px-5 py-2.5">
+                                <span class="text-sm sm:text-base lg:text-lg font-medium text-gray-800 dark:text-gray-200 xl:text-white group-hover:text-primary transition-colors duration-200">
+                                    Profil Pondok
+                                </span>
+                                <svg class="ml-1.5 w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-800 dark:text-gray-200 xl:text-white group-hover:text-primary group-hover:rotate-180 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+
+                            <!-- Dropdown Menu -->
+                            <div class="absolute left-1/2 -translate-x-1/2 top-full w-64 bg-primary dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-100 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top -translate-y-2 group-hover:translate-y-0 z-50 overflow-hidden">
+                                <!-- Menu Items -->
+                                <div class="relative p-1.5">
+                                    <a href="{{ route('profil.show', [
+                                        'section' => 'profil',
+                                        'slug' => 'profil-pondok-pesantren-putra-al-wahabiyyah-1'
+                                    ]) }}"
+                                    class="flex items-center px-4 py-3 text-sm font-medium text-secondary dark:text-gray-300 hover:bg-secondary dark:hover:bg-primary/10 hover:text-primary dark:hover:text-primary-light rounded-lg transition-all duration-200 group/item">
+                                        Profil Al Wahabiyyah 1
+                                    </a>
+                                    
+                                    <a href="{{ route('profil.show', [
+                                        'section' => 'profil',
+                                        'slug' => 'profil-pondok-pesantren-putri-al-lathifiyyah-2'
+                                    ]) }}"
+                                    class="flex items-center px-4 py-3 text-sm font-medium text-secondary dark:text-gray-300 hover:bg-secondary dark:hover:bg-primary/10 hover:text-primary dark:hover:text-primary-light rounded-lg transition-all duration-200 group/item">
+                                        Profil Al Lathifiyyah 2
+                                    </a>
+                                </div>
+                            </div>
                         </li>
-                        <li>
-                            <a href="{{ route('sejarah') }}" class="text-sm sm:text-base lg:text-lg px-5 py-2.5 font-medium block relative after:content-[''] after:absolute after:h-0.5 after:w-0 after:bg-primary after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:duration-500 
-                                {{ request()->routeIs('sejarah') 
-                                    ? 'text-primary dark:text-primary-light after:w-3.75' 
-                                    : 'text-gray-800 dark:text-gray-200 hover:text-primary dark:hover:text-primary-light xl:text-white hover:after:w-3.75' }}">
-                                Sejarah
-                            </a>
+
+                        <!-- SEJARAH DROPDOWN -->
+                        <li class="relative group">
+                            <div class="flex items-center cursor-pointer px-5 py-2.5">
+                                <span class="text-sm sm:text-base lg:text-lg font-medium text-gray-800 dark:text-gray-200 xl:text-white group-hover:text-primary transition-colors duration-200">
+                                    Tarikh
+                                </span>
+                                <svg class="ml-1.5 w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-800 dark:text-gray-200 xl:text-white group-hover:rotate-180 group-hover:text-primary transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+
+                            <!-- Dropdown Menu -->
+                            <div class="absolute left-1/2 -translate-x-1/2 top-full w-64 bg-primary dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-100 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top -translate-y-2 group-hover:translate-y-0 z-50 overflow-hidden">
+
+                                <!-- Menu Items -->
+                                <div class="relative p-1.5">
+                                    <a href="{{ route('profil.show', [
+                                        'section' => 'sejarah',
+                                        'slug' => 'sejarah-pondok-pesantren-putra-al-wahabiyyah-1'
+                                    ]) }}"
+                                    class="flex items-center px-4 py-3 text-sm font-medium text-secondary dark:text-gray-300 hover:bg-secondary dark:hover:bg-primary/10 hover:text-primary dark:hover:text-primary-light rounded-lg transition-all duration-200 group/item">
+                                        Sejarah Al Wahabiyyah 1
+                                    </a>
+                                    
+                                    <a href="{{ route('profil.show', [
+                                        'section' => 'sejarah',
+                                        'slug' => 'sejarah-pondok-pesantren-putri-al-lathifiyyah-2'
+                                    ]) }}"
+                                    class="flex items-center px-4 py-3 text-sm font-medium text-secondary dark:text-gray-300 hover:bg-secondary dark:hover:bg-primary/10 hover:text-primary dark:hover:text-primary-light rounded-lg transition-all duration-200 group/item">
+                                        Sejarah Al Lathifiyyah 2
+                                    </a>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -177,7 +230,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                                 </svg>
-                                Berita
+                                Al Akhbar
                             </a>
                         </li>
                         <li>
@@ -188,30 +241,78 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                 </svg>
-                                Galeri
+                                Tashwir
                             </a>
                         </li>
-                        <li>
-                            <a href="{{ route('profil') }}" class="flex items-center px-4 py-3 text-base font-medium rounded-lg transition-all duration-200
-                                {{ request()->routeIs('profil')
-                                    ? 'text-secondary dark:text-secondary-light bg-secondary/10 dark:bg-secondary/20 border-l-4 border-secondary dark:border-secondary-light' 
-                                    : 'text-gray-400 hover:bg-gray-100 hover:text-primary' }}">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        
+                        <!-- PROFIL DROPDOWN - Mobile Version -->
+                        <li class="mobile-dropdown-parent">
+                            <div class="mobile-dropdown-trigger flex items-center justify-between px-4 py-3 text-base font-medium rounded-lg cursor-pointer text-gray-400 hover:bg-gray-100 hover:text-primary transition-all duration-200">
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                    </svg>
+                                    <span>Profil Pondok</span>
+                                </div>
+                                <svg class="mobile-dropdown-arrow w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                                 </svg>
-                                Profil Pondok
-                            </a>
+                            </div>
+                            
+                            <!-- Profil Dropdown Items -->
+                            <div class="mobile-dropdown-content pl-8 pr-4 overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                                <div class="py-2 space-y-1">
+                                    <a href="{{ route('profil.show', [
+                                        'section' => 'profil',
+                                        'slug' => 'profil-pondok-pesantren-putra-al-wahabiyyah-1'
+                                    ]) }}"
+                                    class="block px-4 py-2.5 text-sm font-medium text-gray-400 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-all duration-200 pl-7">
+                                        Profil Al Wahabiyyah 1
+                                    </a>
+                                    <a href="{{ route('profil.show', [
+                                        'section' => 'profil',
+                                        'slug' => 'profil-pondok-pesantren-putri-al-lathifiyyah-2'
+                                    ]) }}"
+                                    class="block px-4 py-2.5 text-sm font-medium text-gray-400 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-all duration-200 pl-7">
+                                        Profil Al Lathifiyyah 2
+                                    </a>
+                                </div>
+                            </div>
                         </li>
-                        <li>
-                            <a href="{{ route('sejarah') }}" class="flex items-center px-4 py-3 text-base font-medium rounded-lg transition-all duration-200
-                                {{ request()->routeIs('sejarah')
-                                    ? 'text-secondary dark:text-secondary-light bg-secondary/10 dark:bg-secondary/20 border-l-4 border-secondary dark:border-secondary-light' 
-                                    : 'text-gray-400 hover:bg-gray-100 hover:text-primary' }}">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        
+                        <!-- TARIKH DROPDOWN - Mobile Version -->
+                        <li class="mobile-dropdown-parent">
+                            <div class="mobile-dropdown-trigger flex items-center justify-between px-4 py-3 text-base font-medium rounded-lg cursor-pointer text-gray-400 hover:bg-gray-100 hover:text-primary transition-all duration-200">
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span>Tarikh</span>
+                                </div>
+                                <svg class="mobile-dropdown-arrow w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                                 </svg>
-                                Sejarah
-                            </a>
+                            </div>
+                            
+                            <!-- Tarikh Dropdown Items -->
+                            <div class="mobile-dropdown-content pl-8 pr-4 overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                                <div class="py-2 space-y-1">
+                                    <a href="{{ route('profil.show', [
+                                        'section' => 'sejarah',
+                                        'slug' => 'sejarah-pondok-pesantren-putra-al-wahabiyyah-1'
+                                    ]) }}"
+                                    class="block px-4 py-2.5 text-sm font-medium text-gray-400 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-all duration-200 pl-7">
+                                        Sejarah Al Wahabiyyah 1
+                                    </a>
+                                    <a href="{{ route('profil.show', [
+                                        'section' => 'sejarah',
+                                        'slug' => 'sejarah-pondok-pesantren-putri-al-lathifiyyah-2'
+                                    ]) }}"
+                                    class="block px-4 py-2.5 text-sm font-medium text-gray-400 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-all duration-200 pl-7">
+                                        Sejarah Al Lathifiyyah 2
+                                    </a>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </nav>
@@ -245,64 +346,135 @@
 </header>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Elements
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const mobileMenuCloseBtn = document.querySelector('.mobile-menu-close-btn');
-    const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-    const mobileMenuSidebar = document.querySelector('.mobile-menu-sidebar');
+document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
 
-    // Open mobile menu
+    /* =====================================================
+     * MOBILE MENU
+     * ===================================================== */
+    const mobileMenuBtn     = document.querySelector('.mobile-menu-btn');
+    const mobileMenuClose   = document.querySelector('.mobile-menu-close-btn');
+    const mobileOverlay     = document.querySelector('.mobile-menu-overlay');
+    const mobileSidebar     = document.querySelector('.mobile-menu-sidebar');
+
     function openMobileMenu() {
         mobileMenuBtn.classList.add('open');
-        mobileMenuOverlay.classList.remove('invisible', 'opacity-0');
-        mobileMenuOverlay.classList.add('visible', 'opacity-100');
-        mobileMenuSidebar.classList.remove('-translate-x-full');
+        mobileOverlay.classList.remove('invisible', 'opacity-0');
+        mobileOverlay.classList.add('visible', 'opacity-100');
+        mobileSidebar.classList.remove('-translate-x-full');
         body.classList.add('overflow-hidden');
     }
 
-    // Close mobile menu
     function closeMobileMenu() {
         mobileMenuBtn.classList.remove('open');
-        mobileMenuOverlay.classList.remove('visible', 'opacity-100');
-        mobileMenuOverlay.classList.add('invisible', 'opacity-0');
-        mobileMenuSidebar.classList.add('-translate-x-full');
+        mobileOverlay.classList.remove('visible', 'opacity-100');
+        mobileOverlay.classList.add('invisible', 'opacity-0');
+        mobileSidebar.classList.add('-translate-x-full');
         body.classList.remove('overflow-hidden');
+        closeAllMobileDropdowns();
     }
 
-    // Event Listeners
-    mobileMenuBtn.addEventListener('click', openMobileMenu);
-    mobileMenuCloseBtn.addEventListener('click', closeMobileMenu);
-    mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+    mobileMenuBtn?.addEventListener('click', openMobileMenu);
+    mobileMenuClose?.addEventListener('click', closeMobileMenu);
+    mobileOverlay?.addEventListener('click', closeMobileMenu);
 
-    // Close menu when clicking on mobile menu links
-    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-sidebar a');
-    mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', closeMobileMenu);
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeMobileMenu();
     });
 
-    // Close menu on ESC key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeMobileMenu();
+    /* =====================================================
+     * MOBILE DROPDOWN (ACCORDION)
+     * ===================================================== */
+    const mobileDropdowns = document.querySelectorAll('.mobile-dropdown-parent');
+
+    function closeAllMobileDropdowns() {
+        mobileDropdowns.forEach(item => {
+            item.classList.remove('mobile-dropdown-active');
+            const content = item.querySelector('.mobile-dropdown-content');
+            const arrow   = item.querySelector('.mobile-dropdown-arrow');
+            content.style.maxHeight = '0';
+            arrow.classList.remove('rotate-180');
+        });
+    }
+
+    mobileDropdowns.forEach(parent => {
+        const trigger = parent.querySelector('.mobile-dropdown-trigger');
+        const content = parent.querySelector('.mobile-dropdown-content');
+        const arrow   = parent.querySelector('.mobile-dropdown-arrow');
+
+        trigger.addEventListener('click', e => {
+            e.stopPropagation();
+            const isOpen = parent.classList.contains('mobile-dropdown-active');
+
+            closeAllMobileDropdowns();
+
+            if (!isOpen) {
+                parent.classList.add('mobile-dropdown-active');
+                content.style.maxHeight = content.scrollHeight + 'px';
+                arrow.classList.add('rotate-180');
+            }
+        });
+    });
+
+    /* =====================================================
+     * DESKTOP DROPDOWN (HOVER ONLY)
+     * ===================================================== */
+    const desktopDropdowns = document.querySelectorAll('li.group');
+
+    desktopDropdowns.forEach(parent => {
+        const dropdown = parent.querySelector(':scope > .absolute');
+
+        parent.addEventListener('mouseenter', () => {
+            if (window.innerWidth >= 1280) {
+                dropdown?.classList.add('opacity-100', 'visible');
+                dropdown?.classList.remove('opacity-0', 'invisible');
+            }
+        });
+
+        parent.addEventListener('mouseleave', () => {
+            if (window.innerWidth >= 1280) {
+                dropdown?.classList.remove('opacity-100', 'visible');
+                dropdown?.classList.add('opacity-0', 'invisible');
+            }
+        });
+    });
+
+    /* =====================================================
+     * GLOBAL CLICK HANDLER
+     * ===================================================== */
+    document.addEventListener('click', e => {
+        // MOBILE
+        if (window.innerWidth < 1280) {
+            if (!e.target.closest('.mobile-dropdown-parent')) {
+                closeAllMobileDropdowns();
+            }
+        }
+
+        // DESKTOP
+        if (window.innerWidth >= 1280) {
+            if (!e.target.closest('li.group')) {
+                document.querySelectorAll('li.group > .absolute').forEach(dropdown => {
+                    dropdown.classList.remove('opacity-100', 'visible');
+                    dropdown.classList.add('opacity-0', 'invisible');
+                });
+            }
         }
     });
 
-    // Theme Toggle Functionality
-    const themeToggleBtn = document.querySelector('.theme-toggle-btn');
-    themeToggleBtn?.addEventListener('click', () => {
-        const isDark = document.documentElement.classList.contains('dark');
-        if (isDark) {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('theme', 'light');
-        } else {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('theme', 'dark');
-        }
+    /* =====================================================
+     * THEME TOGGLE
+     * ===================================================== */
+    const themeToggle = document.querySelector('.theme-toggle-btn');
+
+    themeToggle?.addEventListener('click', () => {
+        const html = document.documentElement;
+        const isDark = html.classList.contains('dark');
+
+        html.classList.toggle('dark', !isDark);
+        localStorage.setItem('theme', isDark ? 'light' : 'dark');
     });
 
-    // Check saved theme on load
+    // Load saved theme
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark');

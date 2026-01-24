@@ -14,15 +14,12 @@ Route::get('/gallery', [GalleryController::class, 'index'])
 
 Route::get('/gallery/{gallery}', [GalleryController::class, 'show'])
     ->name('gallery.show');
+    
 Route::get('/daftar', [RegistrationController::class, 'index'])->name('daftar');
 
-Route::get('/profil', [ProfilController::class, 'show'])
-    ->defaults('id', 2)
-    ->name('profil');
-
-Route::get('/sejarah', [ProfilController::class, 'show'])
-    ->defaults('id', 3)
-    ->name('sejarah');
+Route::get('/{section}/{slug}', [ProfilController::class, 'show'])
+    ->whereIn('section', ['profil', 'sejarah'])
+    ->name('profil.show');
 
 Route::get('/{category:slug}', [NewsController::class, 'index'])
     ->name('news.category');

@@ -40,70 +40,98 @@
                             </a>
                             @endforeach
                         </div>
-                        {{-- Guide Buttons Grid --}}
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                            @php
-                                $buttons = [
-                                    ['modal1','Persyaratan','fa-list-check'],
-                                    ['modal2','Prosedur','fa-route'],
-                                    ['modal3','Biaya','fa-money-bill-wave'],
-                                    ['modal4','Jadwal','fa-calendar-days'],
-                                    ['modal5','Alur','fa-diagram-project'],
-                                    ['modal6','Kontak','fa-location-dot'],
-                                ];
-                            @endphp
+                        {{-- ================= ACCORDION SECTION ================= --}}
+                        <div class="max-w-4xl mx-auto">
+                            <div class="space-y-3 md:space-y-4">
+                                @foreach($contents as $item)
+                                <div class="accordion-item bg-white dark:bg-gray-900 rounded-lg md:rounded-full shadow-lg dark:shadow-black/30 border border-gray-100 dark:border-gray-800 overflow-hidden transition-all duration-300 ease-out">
+                                    
+                                    {{-- Accordion Header --}}
+                                    <button 
+                                        onclick="toggleAccordion('accordion{{ $loop->iteration }}')"
+                                        class="accordion-toggle w-full flex items-center justify-between px-4 py-4 md:px-6 md:py-5 text-left hover:bg-gray-50 dark:hover:bg-gray-200 transition-colors duration-200">
+                                        
+                                        <div class="flex items-center gap-3 md:gap-4">
+                                            <span class="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-secondary dark:bg-secondary text-primary dark:text-primary transition-all duration-300">
+                                                @php
+                                                    $icons = [
+                                                        'persyaratan' => 'fa-list-check',
+                                                        'alur' => 'fa-diagram-project',
+                                                        'kontak' => 'fa-location-dot',
+                                                        'brosur' => 'fa-book-open'
+                                                    ];
+                                                    $icon = $icons[$item->key] ?? 'fa-circle-info';
+                                                @endphp
+                                                <i class="fa-solid {{ $icon }} text-sm md:text-base"></i>
+                                            </span>
+                                            <h3 class="text-base sm:text-lg md:text-xl font-semibold text-secondary dark:text-secondary line-clamp-1">
+                                                {{ $item->title }}
+                                            </h3>
+                                        </div>
+                                        
+                                        <span class="accordion-chevron text-secondary dark:text-secondary text-lg md:text-xl transition-transform duration-300 ml-2">
+                                            <i class="fa-solid fa-chevron-down"></i>
+                                        </span>
+                                    </button>
 
-                            @foreach($buttons as [$id,$label,$icon])
-                            <button onclick="openModal('{{ $id }}')"
-                                    class="modal-btn group relative flex items-center justify-center gap-4 rounded-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-secondary dark:text-gray-100 shadow-sm dark:shadow-black/30 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:border-secondary cursor-pointer">
-                                <span class="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 dark:bg-primary/20 text-primary transition-all duration-300 group-hover:bg-secondary group-hover:text-white group-hover:scale-110">
-                                    <i class="fa-solid {{ $icon }}"></i>
-                                </span>
-                                <span class="text-lg font-semibold tracking-tight transition-colors">
-                                    {{ $label }}
-                                </span>
-                            </button>
-                            @endforeach
+                                    {{-- Accordion Content --}}
+                                    <div 
+                                        id="accordion{{ $loop->iteration }}"
+                                        class="accordion-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+                                        
+                                        <div class="px-4 md:px-6 pb-4 md:pb-6 pt-2 border-t border-gray-100 dark:border-gray-800">
+                                            <div class="prose prose-sm sm:prose-base md:prose-lg max-w-none 
+                                                        prose-headings:text-emerald-900 dark:prose-headings:text-emerald-400 prose-headings:font-semibold
+                                                        prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-p:leading-relaxed
+                                                        prose-ul:text-gray-700 dark:prose-ul:text-gray-300 prose-ul:pl-4 md:prose-ul:pl-5
+                                                        prose-ol:text-gray-700 dark:prose-ol:text-gray-300 prose-ol:pl-4 md:prose-ol:pl-5
+                                                        prose-li:my-1 md:prose-li:my-1.5 prose-li:marker:text-emerald-600 dark:prose-li:marker:text-emerald-400
+                                                        prose-strong:text-emerald-800 dark:prose-strong:text-emerald-300 prose-strong:font-semibold
+                                                        prose-blockquote:border-l-4 prose-blockquote:border-emerald-500 
+                                                        prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-gray-600 dark:prose-blockquote:text-gray-400
+                                                        prose-hr:border-gray-200 dark:prose-hr:border-gray-700">
+
+                                                {{-- 🖼️ Gambar (jika ada) --}}
+                                                @if($item->image)
+                                                    <div class="mb-4 md:mb-6">
+                                                        <img 
+                                                            src="{{ asset('storage/' .$item->image) }}"
+                                                            alt="{{ $item->title }}"
+                                                            class="w-full max-h-[240px] md:max-h-[320px] object-contain rounded-lg md:rounded-xl shadow-md mx-auto cursor-zoom-in hover:scale-[1.02] transition-transform"
+                                                        >
+                                                        @if($item->key === 'brosur')
+                                                            <a 
+                                                                href="{{ asset('storage/'.$item->image) }}"
+                                                                download
+                                                                class="inline-flex items-center justify-center gap-2 mt-4 md:mt-5 px-4 py-2.5 md:px-6 md:py-3 rounded-lg md:rounded-xl
+                                                                    bg-emerald-700 hover:bg-emerald-800
+                                                                    text-white text-sm md:text-base font-semibold tracking-wide
+                                                                    transition-all duration-300
+                                                                    shadow-lg hover:shadow-xl w-full sm:w-auto"
+                                                            >
+                                                                <i class="fa-solid fa-download"></i>
+                                                                Download Brosur
+                                                            </a>
+                                                        @endif
+                                                    </div>
+                                                @endif
+
+                                                {{-- 📝 Konten teks (jika ada) --}}
+                                                @if($item->content)
+                                                    {!! $item->content !!}
+                                                @endif
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
                         </div>
 
                     </div>
                 </div>
             </section>
-
-            {{-- ================= MODAL BACKDROP ================= --}}
-            <div id="modalBackdrop" 
-                 class="fixed inset-0 z-50 hidden bg-black/60 dark:bg-black/80 backdrop-blur-sm transition-opacity"></div>
-
-            {{-- ================= MODALS ================= --}}
-            @foreach($contents as $key => $item)
-            <div id="modal{{ $loop->iteration }}"
-                 class="modal fixed inset-0 z-50 hidden flex items-center justify-center px-4 sm:px-6">
-                <div class="w-full max-w-3xl max-h-[90vh] flex flex-col rounded-2xl shadow-2xl bg-white transform scale-95 opacity-0 transition-all duration-300">
-                    
-                    {{-- Modal Header --}}
-                    <div class="flex items-center justify-center px-6 py-4 bg-secondary rounded-t-2xl">  {{-- Changed to bg-primary for consistency --}}
-                        <h3 class="text-xl sm:text-2xl font-semibold text-white">  {{-- Changed to text-white for contrast --}}
-                            {{ $item->title }}
-                        </h3>
-                    </div>
-
-                    {{-- Modal Content --}}
-                    <div class="overflow-y-auto flex-1 px-6 py-4 bg-white">  {{-- Forced bg-white and text-gray-900 --}}
-                        <div class="prose prose-invert max-w-none prose-ol:list-decimal prose-ul:list-disc prose-ol:pl-6 prose-ul:pl-6 prose-li:marker:text-primary prose-li:my-1 prose-p:mb-2 prose-ol:mt-2 prose-ul:mt-2 prose-headings:text-emerald-900 prose-p:text-emerald-900 dark:prose-invert">  {{-- Added overrides for black text on white bg --}}
-                            {!! $item->content !!}
-                        </div>
-                    </div>
-
-                    {{-- Modal Footer --}}
-                    <div class="flex justify-end gap-3 px-6 py-4 border-t border-gray-200 bg-white rounded-b-2xl">  {{-- Changed to bg-white --}}
-                        <button onclick="closeModal('modal{{ $loop->iteration }}')"
-                                class="px-6 py-2.5 w-full rounded-lg bg-emerald-800 cursor-pointer text-white hover:bg-secondary transition font-medium">
-                            Tutup
-                        </button>
-                    </div>
-                </div>
-            </div>
-            @endforeach
 
         </div>
     </div>
@@ -111,62 +139,148 @@
 
 {{-- ================= SCRIPT ================= --}}
 <script>
-function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    const backdrop = document.getElementById('modalBackdrop');
+// Accordion functionality
+function toggleAccordion(id) {
+    const accordion = document.getElementById(id);
+    const isOpen = accordion.style.maxHeight && accordion.style.maxHeight !== '0px';
 
-    backdrop.classList.remove('hidden');
-    modal.classList.remove('hidden');
+    // Close all accordions
+    document.querySelectorAll('.accordion-content').forEach(item => {
+        item.style.maxHeight = null;
+    });
 
-    setTimeout(() => {
-        modal.querySelector('div').classList.remove('scale-95', 'opacity-0');
-        modal.querySelector('div').classList.add('scale-100', 'opacity-100');
-    }, 10);
+    // Reset semua chevron
+    document.querySelectorAll('.accordion-chevron').forEach(chevron => {
+        chevron.classList.remove('open');
+        chevron.querySelector('i').classList.remove('fa-chevron-up');
+        chevron.querySelector('i').classList.add('fa-chevron-down');
+    });
 
-    document.body.style.overflow = 'hidden';
+    // Open accordion yang diklik
+    if (!isOpen) {
+        accordion.style.maxHeight = accordion.scrollHeight + 'px';
+
+        const chevron = accordion.previousElementSibling.querySelector('.accordion-chevron');
+        chevron.classList.add('open');
+        chevron.querySelector('i').classList.remove('fa-chevron-down');
+        chevron.querySelector('i').classList.add('fa-chevron-up');
+    }
+
 }
 
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    const backdrop = document.getElementById('modalBackdrop');
 
-    modal.querySelector('div').classList.add('scale-95', 'opacity-0');
-
-    setTimeout(() => {
-        modal.classList.add('hidden');
-        backdrop.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-    }, 300);
-}
-
-document.getElementById('modalBackdrop').addEventListener('click', () => {
-    const open = document.querySelector('.modal:not(.hidden)');
-    if (open) closeModal(open.id);
-});
-
-document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-        const open = document.querySelector('.modal:not(.hidden)');
-        if (open) closeModal(open.id);
+// Optional: Open first accordion by default on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const firstAccordion = document.querySelector('.accordion-content');
+    if (firstAccordion) {
+        toggleAccordion(firstAccordion.id);
     }
 });
 </script>
+
 <style>
-/* Override untuk memastikan list muncul di modal */
-.modal .prose ul {
-    list-style-type: disc; /* Bullet default */
-    padding-left: 1.5rem;
+/* Smooth accordion animations */
+.accordion-content {
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal .prose ol {
-    list-style-type: decimal; /* Angka default */
-    padding-left: 1.5rem;
+
+.accordion-chevron {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal .prose li {
-    margin-bottom: 0.25rem;
-    color: #000000; /* Warna teks hitam */
+.accordion-content .prose ol {
+    list-style-type: decimal !important;
+    list-style-position: outside !important;
 }
-.modal .prose li::marker {
-    color: #000000; /* Warna marker sesuai primary (hijau) */
+
+.accordion-content .prose ul {
+    list-style-type: disc !important;
+    list-style-position: outside !important;
+}
+
+/* Custom scrollbar for accordion content */
+.accordion-content .prose {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #10b981 transparent;
+}
+
+.accordion-content .prose::-webkit-scrollbar {
+    width: 6px;
+}
+
+.accordion-content .prose::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.accordion-content .prose::-webkit-scrollbar-thumb {
+    background-color: #10b981;
+    border-radius: 20px;
+}
+
+/* Hover effect for accordion items */
+.accordion-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.accordion-item:focus-within {
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.5);
+}/* ===== FINAL FIX: FORCE NUMBERED LIST ===== */
+
+/* Reset list bawaan prose */
+.accordion-content .prose ol {
+    list-style: none !important;
+    padding-left: 0 !important;
+    counter-reset: item;
+}
+
+/* Setiap item */
+.accordion-content .prose ol > li {
+    counter-increment: item;
+    position: relative;
+    padding-left: 2rem;
+}
+
+/* Angka manual */
+.accordion-content .prose ol > li::before {
+    content: counter(item) ".";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: 600;
+    color: #000000; /* emerald-600 */
+}
+
+/* Bullet list tetap normal */
+.accordion-content .prose ul {
+    list-style: disc !important;
+    padding-left: 1.5rem !important;
+}
+/* Responsive line clamp for mobile */
+.line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+/* Responsive image zoom on mobile */
+@media (max-width: 640px) {
+    .accordion-content img:hover {
+        transform: none !important;
+    }
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+    .accordion-toggle {
+        min-height: 3.5rem;
+    }
+    
+    .accordion-content .prose {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
 }
 </style>
 @endsection

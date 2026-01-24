@@ -9,5 +9,6 @@ class RegistrationContent extends Model
         'key',
         'title',
         'content',
+        'image',
     ];
 }

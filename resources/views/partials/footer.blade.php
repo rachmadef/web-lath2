@@ -82,37 +82,25 @@
             <!-- Menu Navigasi -->
             <div class="lg:col-span-2 lg:col-start-6">
                 <h3 class="text-lg font-semibold text-secondary mb-4 pb-2 border-b border-gold/30">
-                    Menu Utama
+                    Link
                 </h3>
                 <ul class="space-y-3">
                     <li>
-                        <a href="{{ route('home') }}" 
+                        <a href="#" 
                            class="text-secondary hover:text-primary text-sm transition-colors duration-300 block py-1">
-                            Beranda
+                            NU Online
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('news.category', 'berita') }}" 
+                        <a href="#" 
                            class="text-secondary hover:text-primary text-sm transition-colors duration-300 block py-1">
-                            Berita
+                            Tambakberas
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('gallery.index') }}" 
                            class="text-secondary hover:text-primary text-sm transition-colors duration-300 block py-1">
-                            Galeri
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('profil') }}" 
-                           class="text-secondary hover:text-primary text-sm transition-colors duration-300 block py-1">
-                            Profil Pondok
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('sejarah') }}" 
-                           class="text-secondary hover:text-primary text-sm transition-colors duration-300 block py-1">
-                            Sejarah
+                            MA Unggulan KH. A. Wahab Hasbullah
                         </a>
                     </li>
                 </ul>
